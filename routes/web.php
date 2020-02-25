@@ -35,3 +35,10 @@ Route::post('/agregarCategoria', 'CategoriasController@store');
 Route::get('/formularioRegistro', function (){
     return view('formularioRegistro');
 });
+
+
+/*Login*/
+Route::get('/Login', function(){
+  return view('Login');
+});
+Route::post('Login', 'Auth\LoginController@Login')->name('Login');

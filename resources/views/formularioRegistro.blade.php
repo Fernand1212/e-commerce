@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('css') <link rel="stylesheet" href="{{asset ('css/formularioRegistro.css')}}">
+@section('link') <link rel="stylesheet" href="{{asset ('css/formularioRegistro.css')}}">
 @endsection
 @section('content')
 <div id="Todo">

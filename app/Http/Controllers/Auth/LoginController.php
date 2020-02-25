@@ -3,37 +3,32 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+  public function Login(){
 
-    use AuthenticatesUsers;
+      $reglas = [
+      'email'    => 'email|required|string|unique:users,email',
+      'password' => 'required|string|min:6'
+    ];
+    $mensajes = [
+      'email'    => 'Por favor vuelva a intentarlo',
+      'required' => 'El campo :attribute es obligatorio',
+      'unique'   => 'Email ya registrado',
+      'min'      => 'La contraseña debe tener al menos :min caracteres'
+      ];
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+
+  $datosUsuario =  $this->validate(request(),$reglas, $mensajes);
+if(Auth::attempt($datosUsuario)){
+  return "ok";
+} else {
+  return back()->withErrors(['email' => 'El email no se encuentra registrado'])
+  ->withInput(request(['email']));
 }
+
+  }
+   }

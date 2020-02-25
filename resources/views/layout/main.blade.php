@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   @include('includes.head')
-  @yield('css')
+  @yield('link')
 </head>
 
 <body>
