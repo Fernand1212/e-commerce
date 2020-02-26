@@ -32,13 +32,16 @@ Route::get('/formAgregarCategoria', 'CategoriasController@create');
 Route::post('/agregarCategoria', 'CategoriasController@store');
 
 /* Registrar Usuario */
-Route::get('/formularioRegistro', function (){
-    return view('formularioRegistro');
-});
+Route::get('/formularioRegistro','Auth\RegisterController@showRegistrationForm');
+Route::post('/formularioRegistro', 'Auth\RegisterController@register');
 
 
 /*Login*/
-Route::get('/Login', function(){
-  return view('Login');
+Route::get('/login', function(){
+  return view('Users\login');
 });
-Route::post('Login', 'Auth\LoginController@Login')->name('Login');
+Route::post('login', 'Auth\LoginController@Login')->name('login');
+Route::get('pagRegistro', 'PagRegistroController@index')->name('pagRegistro');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -30,6 +30,10 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/home';
 
+    public function showRegistrationForm()
+    {
+        return view('Users\formularioRegistro');
+    }
     /**
      * Create a new controller instance.
      *
@@ -49,9 +53,18 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'min:3'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'apellido' => ['required', 'string', 'max:255', 'min:3'],
+            'ciudad'    =>['required', 'string', 'max:255', 'min:4'],
+            'barrio'  => ['required', 'string', 'max:255', 'min:3'],
+            'postal'  => ['required', 'numeric'],
+            'direccion'   => ['required', 'string', 'max:255', 'min:6'],
+            'nacimiento' => ['required', 'numeric'],
+            'alias'      => ['required', 'string', 'max:255', 'min:6'],
+            'telefono'   => ['required', 'numeric']
+             
         ]);
     }
 
@@ -67,6 +80,15 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'apellido'  => $data['apellido'],
+            'ciudad'     => $data['ciudad'],
+            'barrio'   => $data['barrio'],
+            'postal'   => $data['postal'],
+            'direccion'    => $data['direccion'],
+            'nacimiento' => $data['nacimiento'],
+            'alias'     => $data['alias'],
+            'telefono'  => $data['telefono']
         ]);
     }
+
 }

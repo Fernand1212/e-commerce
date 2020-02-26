@@ -4,7 +4,7 @@
                 <nav class=" navbar navbar-expand-lg navbar-light"
                 id="inicio">
 
-                <h4 class=" mr-3 text-uppercase font-weight-bold" ><a href="index.php" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
+                <h4 class=" mr-3 text-uppercase font-weight-bold" ><a href="/" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,7 +67,7 @@
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav ml-auto">
 
-                          <a class=" mr-2" id="sesion" href="login.php" role="button">Inicio de Sesion</a>
+                          <a class=" mr-2" id="sesion" href="login" role="button">Inicio de Sesion</a>
                            <a  class="  mr-2" style="padding-left: 2%;" id="sesion" href="formularioRegistro" role="button">Registrarme</a>
 
 

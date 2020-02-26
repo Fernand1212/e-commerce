@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('link') <link rel="stylesheet" href="{{asset ('css/Login.css')}}">
+@section('link') <link rel="stylesheet" href="{{asset ('css/login.css')}}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 @endsection
 @section('content')
@@ -8,7 +8,7 @@
     <div id="Todo2">
     <div id="Todo">
 <h1>Iniciar Sesion</h1>
-<form method="POST" action="{{route('Login')}}">
+<form method="POST" action="{{route('login')}}">
   {{csrf_field()}}
     <div class="form-group">
         <label for="email">Email</label>

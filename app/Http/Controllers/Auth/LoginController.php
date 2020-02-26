@@ -24,7 +24,7 @@ class LoginController extends Controller
 
   $datosUsuario =  $this->validate(request(),$reglas, $mensajes);
 if(Auth::attempt($datosUsuario)){
-  return "ok";
+  return redirect()->route('pagRegistro');
 } else {
   return back()->withErrors(['email' => 'El email no se encuentra registrado'])
   ->withInput(request(['email']));
