@@ -7,16 +7,21 @@ use Auth;
 
 class LoginController extends Controller
 {
+
+public function showLoginForm(){
+  return view('auth.login');
+}
+
+
   public function Login(){
 
       $reglas = [
-      'email'    => 'email|required|string|unique:users,email',
+      'email'    => 'email|required|string',
       'password' => 'required|string|min:6'
     ];
     $mensajes = [
       'email'    => 'Por favor vuelva a intentarlo',
       'required' => 'El campo :attribute es obligatorio',
-      'unique'   => 'Email ya registrado',
       'min'      => 'La contraseña debe tener al menos :min caracteres'
       ];
 
@@ -24,7 +29,7 @@ class LoginController extends Controller
 
   $datosUsuario =  $this->validate(request(),$reglas, $mensajes);
 if(Auth::attempt($datosUsuario)){
-  return redirect()->route('pagRegistro');
+  return redirect()->route('index');
 } else {
   return back()->withErrors(['email' => 'El email no se encuentra registrado'])
   ->withInput(request(['email']));

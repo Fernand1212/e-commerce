@@ -4,7 +4,7 @@
                 <nav class=" navbar navbar-expand-lg navbar-light"
                 id="inicio">
 
-                <h4 class=" mr-3 text-uppercase font-weight-bold" ><a href="/" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
+                <h4 class=" mr-3 text-uppercase font-weight-bold" ><a href="index" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -61,17 +61,23 @@
                             <a href="carrito.php" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
                             <span class=" badge-pill badge-danger notify">0</span>
                           </div>
+                          @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Usuario</a>
 
-
-
+                        @else
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav ml-auto">
 
                           <a class=" mr-2" id="sesion" href="login" role="button">Inicio de Sesion</a>
-                           <a  class="  mr-2" style="padding-left: 2%;" id="sesion" href="formularioRegistro" role="button">Registrarme</a>
+                          @if (Route::has('register'))
+                           <a  class="  mr-2" style="padding-left: 2%;" id="sesion" href="register" role="button">Registrarme</a>
 
-
+                           @endif
+                           @endauth
                       </div>
-                  </div>
+                  </div>@endif
               </nav>
                         </div>
+

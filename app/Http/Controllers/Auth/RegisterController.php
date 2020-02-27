@@ -32,7 +32,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('Users\formularioRegistro');
+        return view('auth\register');
     }
     /**
      * Create a new controller instance.

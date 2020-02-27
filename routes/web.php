@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/layout/index');
-});
+Route::get('/index','indexController@home')->name('index');
+
 
 ############## CRUD Marcas ###################
 Route::get('/adminMarcas', 'MarcasController@index');
@@ -31,17 +30,8 @@ Route::get('/adminCategorias', 'CategoriasController@index');
 Route::get('/formAgregarCategoria', 'CategoriasController@create');
 Route::post('/agregarCategoria', 'CategoriasController@store');
 
-/* Registrar Usuario */
-Route::get('/formularioRegistro','Auth\RegisterController@showRegistrationForm');
-Route::post('/formularioRegistro', 'Auth\RegisterController@register');
-
-
 /*Login*/
-Route::get('/login', function(){
-  return view('Users\login');
-});
-Route::post('login', 'Auth\LoginController@Login')->name('login');
-Route::get('pagRegistro', 'PagRegistroController@index')->name('pagRegistro');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
