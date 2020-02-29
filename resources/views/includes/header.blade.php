@@ -4,7 +4,7 @@
                 <nav class=" navbar navbar-expand-lg navbar-light"
                 id="inicio">
 
-                <h4 class=" mr-3 text-uppercase font-weight-bold" ><a href="index" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
+                <h4 class=" mr-3 text-uppercase font-weight-bold" ><a href="/" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -61,23 +61,39 @@
                             <a href="carrito.php" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
                             <span class=" badge-pill badge-danger notify">0</span>
                           </div>
-                          @if (Route::has('login'))
+  @guest
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+          <a class=" mr-2" id="sesion" href="login" role="button">Inicio de Sesion</a>
+          @if (Route::has('register'))
+           <a  class="  mr-2" style="padding-left: 2%;" id="sesion" href="register" role="button">Registrarme</a>
+     </div>
+  </div>    @endif
+  @else
                 <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Usuario</a>
+                    <div class="widget-header">
+                    <a href="usuario.php" class="mr-3 icon icon-sm rounded-circle border"><img
+                              class="rounded-circle img-sm bordero"
+                              src="archivos/"
+                            /></i></a>
+                    </div>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                        @else
-                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                      <div class="navbar-nav ml-auto">
-
-                          <a class=" mr-2" id="sesion" href="login" role="button">Inicio de Sesion</a>
-                          @if (Route::has('register'))
-                           <a  class="  mr-2" style="padding-left: 2%;" id="sesion" href="register" role="button">Registrarme</a>
-
-                           @endif
-                           @endauth
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href=""
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                       </div>
-                  </div>@endif
-              </nav>
-                        </div>
+                    </li>
+@endguest
 
+             </nav>
+                        </div>

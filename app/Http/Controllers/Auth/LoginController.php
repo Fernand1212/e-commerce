@@ -12,6 +12,10 @@ public function showLoginForm(){
   return view('auth.login');
 }
 
+public function __construct()
+{
+    $this->middleware('guest')->except('logout');
+}
 
   public function Login(){
 
@@ -36,4 +40,11 @@ if(Auth::attempt($datosUsuario)){
 }
 
   }
+
+  public function logout(){
+  Auth::logout();
+  return redirect('/');
+  }
+
+
    }
