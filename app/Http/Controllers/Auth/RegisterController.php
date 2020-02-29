@@ -50,7 +50,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255', 'min:3'],
@@ -64,6 +64,7 @@ class RegisterController extends Controller
             'nacimiento' => ['required', 'numeric'],
             'alias'      => ['required', 'string', 'max:255', 'min:6'],
             'telefono'   => ['required', 'numeric']
+            
              
         ]);
     }
@@ -75,8 +76,16 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        return User::create([
+    {     
+        $request = app('request');
+        if($request->hasfile('avatar')){
+            $avatar = $request->file('avatar')->store('public');
+            $nombreImagen = basename($avatar);
+            
+            
+        }
+
+        return  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -87,8 +96,12 @@ class RegisterController extends Controller
             'direccion'    => $data['direccion'],
             'nacimiento' => $data['nacimiento'],
             'alias'     => $data['alias'],
-            'telefono'  => $data['telefono']
+            'telefono'  => $data['telefono'],
+            'avatar'  => $nombreImagen
         ]);
-    }
+        
+       
 
+     
+ }
 }

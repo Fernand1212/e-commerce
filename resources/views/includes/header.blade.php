@@ -41,7 +41,7 @@
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Niños
-                          </a>
+                             </a>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="producto-vans.php">VANS</a>
                             <a class="dropdown-item" href="producto.php">NIKE</a>
@@ -55,38 +55,42 @@
 
 
 
-                    <div style="padding=5%">
-                        <div class="widgets-wrap float-md-right">
-                          <div class="widget-header  mr-3">
+                    
+                        <div class="widgets-wrap navbar-nav ml-auto">
+                          <div class="widget-header">
                             <a href="carrito.php" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-                            <span class=" badge-pill badge-danger notify">0</span>
-                          </div>
+                            <span class=" badge-pill badge-danger notify">0</span></div>
+                            </div>
   @guest
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-          <a class=" mr-2" id="sesion" href="login" role="button">Inicio de Sesion</a>
+          <a class=" mr-2" id="sesion" href="login" role="button">Iniciar Sesión</a>
           @if (Route::has('register'))
            <a  class="  mr-2" style="padding-left: 2%;" id="sesion" href="register" role="button">Registrarme</a>
      </div>
   </div>    @endif
   @else
                 <div class="top-right links">
-                    <div class="widget-header">
+                    <div class="widget-header mr-3">
                     <a href="usuario.php" class="mr-3 icon icon-sm rounded-circle border"><img
                               class="rounded-circle img-sm bordero"
-                              src="archivos/"
-                            /></i></a>
+                              src="/storage/{{Auth::user()->avatar}}"></i></a>
+                            
+                  
+                           
+                          </div>  
+                          
                     </div>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->alias }} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href=""
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Salir') }}
                             </a>
                             <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                                 @csrf

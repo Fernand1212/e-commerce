@@ -16,7 +16,7 @@ class CategoriasController extends Controller
     {
         //
         $categorias = Categoria::paginate(6);
-        return view('adminCategorias', [ 'categorias' =>  $categorias ]);
+        return view('Categorias/adminCategorias', [ 'categorias' =>  $categorias ]);
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoriasController extends Controller
     public function create()
     {
         //
-        return view('formAgregarCategoria');
+        return view('Categorias/formAgregarCategoria');
     }
 
     /**

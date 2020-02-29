@@ -18,7 +18,7 @@ class ProductosController extends Controller
     {
         //
         $productos = Producto::with('getMarca', 'getCategoria')->get();
-        return view('adminProductos',
+        return view('Productos/adminProductos',
             [
                 'productos'=>$productos
             ]);
@@ -34,7 +34,7 @@ class ProductosController extends Controller
         //
         $marcas = Marca::all();
         $categorias = Categoria::all();
-        return view('formAgregarProducto',
+        return view('Productos/formAgregarProducto',
             [
                 'marcas'=>$marcas,
                 'categorias'=>$categorias
@@ -47,22 +47,38 @@ class ProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
-        $validacion = $request->validate([
-            'prdImagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
+    /* Validación */
+       $reglas = [
+       'prdNombre' => 'string|unique:productos:prdNombre|required',
+       'prdPrecio' => 'numeric|min:1000|required',
+       'prdImagen' => 'required|file|image(jpg ,jpeg ,png ,bmp ,gif ,svg)',
+       'prdPresentacion' => 'string|required|min:20'
+       ];
+       $mensajes = [
+           'required' => 'Este campo es obligatorio',
+           'min'      => 'El precio minimo es de $1.000',
+           'numeric'  => 'El precio debe estar representado por nùmeros',
+           'image'    => 'Las extenciones admitidas son JPG, JPEG, PNG, BMP, GIF y SVG. <br> por favor vuelva a intentarlo'
+       ];
+       $this->validate($req,$reglas,$mensajes);
+    /* pdrImagen */
+    $ruta = $req->file('prdImagen')->storage('public');
+    $nombreImagen = basename($ruta);
+    /* Guardar */
+       $producto = new Producto;
+       $producto->prdNombre = $req('prdNombre');
+       $producto->prdPrecio = $req('prdPrecio');
+       $producto->idMarca = $req('idMarca');
+       $producto->idCategoria = $req('idCategoria');
+       $producto->idMarca = $req('idMarca');
+       $producto->prdPresentacion = $req('prdPresentacion');
+       $producto->prdImagen = $nombreImagen;
+       $producto->save();
+       return redirect('/adminProductos')
+            ->with('mensaje', 'Producto '.$producto->prdnombre.' agregada con éxito');
 
-        $imageName = 'noDisponible.jpg';
-        if( $request->file('prdImagen') ) {
-            //$imageName = time().'.'.request()->prdImagen->getClientOriginalExtension();
-            $imagen = $request->file('prdImagen');
-            //$imagen->getClientOriginalExtension();
-            $imageName = $request->prdImagen->getClientOriginalName();
-            $request->prdImagen->move(public_path('images/productos'), $imageName);
-        }
-        return $imageName;
     }
 
     /**

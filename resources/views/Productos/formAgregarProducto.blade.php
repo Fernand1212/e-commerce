@@ -14,6 +14,7 @@
             <div class="form-group">
                 <label for="prdNombre">Nombre del Producto:</label>
                 <input type="text" class="form-control" name="prdNombre"  value="{{ old('prdNombre') }}" id="prdNombre" placeholder="nombre del Producto" required>
+                {!! $errors->first('prdNombre',':message')!!}
             </div>
             <div class="form-group">
             <label for="prdPrecio">Precio:</label>
@@ -22,6 +23,7 @@
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" name="prdPrecio" value="{{ old('prdPrecio') }}" class="form-control" id="prdPrecio" placeholder="0" min="0" step="0" required>
+                {!! $errors->first('prdPrecio',':message')!!}
             </div>
             </div>
 
@@ -57,6 +59,7 @@
 
             Imagen: <br>
             <input type="file" name="prdImagen" class="form-control">
+            {!! $errors->first('prdImagen',':message')!!}
             <br>
             <button type="submit" class="btn btn-dark px-4">
                 <i class="far fa-plus-square fa-lg mr-2"></i>

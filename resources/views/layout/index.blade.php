@@ -48,7 +48,7 @@
  <div class="container tarjetas"> <div class="row"> <div class="col-md-4">
  <figure class="card card-product"> <div class="img-wrap"><a
  href="producto.php"><img href="producto.php"
- src="{{asset('images/nikelogo.jpg')}}"></a></div> <figcaption
+ src=""></a></div> <figcaption
  class="info-wrap"> <h4 class="title">NIKE</h4> <p class="desc">Vea aquí los
  ultimos modelos</p> <div class="rating-wrap"> <div class="label-rating">132
  reviews</div> <div class="label-rating">154 orders </div> </div> </figcaption>

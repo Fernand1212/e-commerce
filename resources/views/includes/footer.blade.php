@@ -119,7 +119,7 @@
   </div>
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019 Copyright. Todos los derechos reservados.
+  <div class="footer-copyright text-center py-3">© <?= date('Y'); ?> Copyright. Todos los derechos reservados.
     <a href="#" style="text-decoration:none">Politica de privacidad</a>
   </div>
   <!-- Copyright -->

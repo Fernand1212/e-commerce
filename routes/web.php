@@ -14,18 +14,20 @@
 Route::get('/','indexController@home')->name('index');
 
 
-############## CRUD Marcas ###################
-Route::get('/Marcas/adminMarcas', 'MarcasController@index')->name('adminMarcas');
-Route::get('/Marcas/formAgregarMarca', 'MarcasController@create')->name('formAgregarMarca');
-Route::post('/Marcas/agregarMarca', 'MarcasController@store');
-Route::get('/Marcas/formModificarMarca/{id}', 'MarcasController@edit');
-Route::post('/Marcas/modificarMarca', 'MarcasController@update');
+############## CRUD MARCAS ###################
+Route::get('/adminMarcas', 'MarcasController@index');
+Route::get('/formAgregarMarca', 'MarcasController@create');
+Route::post('/agregarMarca', 'MarcasController@store');
+Route::get('/formModificarMarca/{id}', 'MarcasController@edit');
+Route::post('/modificarMarca', 'MarcasController@update');
 
 ############## CRUD PRODUCTOS ###################
 Route::get('/adminProductos', 'ProductosController@index');
 Route::get('/formAgregarProducto', 'ProductosController@create');
+Route::post('/agregarProducto', 'ProductosController@store');
+Route::post('/modificarProducto', 'ProductosController@update');
 
-//Route::view('/adminCategorias', 'adminCategorias');
+############## CRUD CATEGORIAS ###################
 Route::get('/adminCategorias', 'CategoriasController@index');
 Route::get('/formAgregarCategoria', 'CategoriasController@create');
 Route::post('/agregarCategoria', 'CategoriasController@store');
