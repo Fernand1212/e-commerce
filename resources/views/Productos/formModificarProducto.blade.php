@@ -11,7 +11,7 @@
                     @csrf
                     Nombre:
                     <br>
-                    <input type="text" name="mkNombre" value="{{ $marca->mkNombre }}" class="form-control">
+                    <input type="text" name="prdNombre" value="{{ $marca->prdNombre }}" class="form-control">
                     <input type="hidden" name="idMarca" value="{{ $marca->idMarca }}">
                     <br>
                     <button class="btn btn-dark">Agregar</button>

@@ -18,6 +18,7 @@
             <tr>
                 <th>id</th>
                 <th>Marca</th>
+                <th>Logo</th>
                 <th colspan="2">
                     <a href="/formAgregarMarca" class="btn btn-dark">Agregar</a>
                 </th>
@@ -25,20 +26,22 @@
             </thead>
             <tbody>
             @foreach( $marcas as $marca )
-                <tr>
+                    <tr>
                     <td>{{$marca->idMarca}}</td>
                     <td>{{$marca->mkNombre}}</td>
+                    <td><img src="/storage/{{$marca->mkImagen}}" height="100" width="120"> </td>
                     <td>
                         <a href="/formModificarMarca/{{$marca->idMarca}}" class="btn btn-outline-secondary">
                             Modificar
                         </a>
                     </td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary">
-                            Eliminar
-                        </a>
-                    </td>
-                </tr>
+                    <form action="/eliminarMarca" method="post">
+                    @csrf
+                    <input type="hidden" name="idMarca" value="{{$marca->idMarca}}">
+                    <input type="submit" value="Eliminar" class="btn btn-danger">
+                   </td></form>
+                     </tr>
             @endforeach
             </tbody>
         </table>
