@@ -27,7 +27,6 @@ class CreateUsersTable extends Migration
             $table->year('nacimiento');
             $table->string('alias',100);
             $table->string('telefono',50);
-            $table->text('avatar');
             $table->rememberToken();
             $table->timestamps();
         });

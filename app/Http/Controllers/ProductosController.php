@@ -53,7 +53,7 @@ class ProductosController extends Controller
        $reglas = [
        'prdNombre' => 'string|unique:productos:prdNombre|required',
        'prdPrecio' => 'numeric|min:1000|required',
-       'prdImagen' => 'required|file|image|mimes:jpg,jpeg, png, bmp, gif, svg',
+       'prdImagen' => 'required|file|image(jpg ,jpeg ,png ,bmp ,gif ,svg)',
        'prdPresentacion' => 'string|required|min:20'
        ];
        $mensajes = [
@@ -64,7 +64,7 @@ class ProductosController extends Controller
        ];
        $this->validate($req,$reglas,$mensajes);
     /* pdrImagen */
-    $ruta = $req->file('prdImagen')->store('public');
+    $ruta = $req->file('prdImagen')->storage('public');
     $nombreImagen = basename($ruta);
     /* Guardar */
        $producto = new Producto;
@@ -74,7 +74,6 @@ class ProductosController extends Controller
        $producto->idCategoria = $req('idCategoria');
        $producto->idMarca = $req('idMarca');
        $producto->prdPresentacion = $req('prdPresentacion');
-       $producto->created_at = date('Y-m-d H:i:s');
        $producto->prdImagen = $nombreImagen;
        $producto->save();
        return redirect('/adminProductos')

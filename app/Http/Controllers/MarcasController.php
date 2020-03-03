@@ -40,18 +40,13 @@ class MarcasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $req)
-    { $regla = ['mkImagen' => 'required|file|image|mimes:jpg,jpeg,png,bmp,gif,svg'];
-        $mensaje = ['image'    => 'Las extenciones admitidas son JPG, JPEG, PNG, BMP, GIF y SVG. <br> por favor vuelva a intentarlo'];
+    public function store(Request $request)
+    {
         //validacion
-$this->validate($req,$regla,$mensaje );
-$ruta = $req->file('mkImagen')->store('public');
-    $nombreImagen = basename($ruta);
-        $mkNombre = $req->input('mkNombre');
+
+        $mkNombre = $request->input('mkNombre');
         $Marca = new Marca;
         $Marca->mkNombre = $mkNombre;
-        $Marca->mkImagen = $nombreImagen;
-        $Marca->created_at = date('Y-m-d H:i:s');
         $Marca->save();
         return redirect('/adminMarcas')
             ->with('mensaje', 'Marca '.$Marca->mkNombre.' agregada con éxito');
@@ -104,12 +99,8 @@ $ruta = $req->file('mkImagen')->store('public');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $req)
-    { $id = $req['idMarca'];
-        $marca = Marca::find($id);
-        $marca->delete();
-        return redirect('/adminMarcas')->with('mensaje', 'Marca' .$marca->mkNombre.'eliminada con éxito');
-        
-        
+    public function destroy($id)
+    {
+        //
     }
 }

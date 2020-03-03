@@ -74,7 +74,7 @@ protected function validator(array $data)
      *
      * @param  array  $data
      * @return \App\User
-     */ 
+     */
     protected function create(array $data)
     {     
         $request = app('request');
