@@ -53,7 +53,7 @@
              <span class=" badge-pill badge-danger notify">0</span>
            </div>
            @guest
-           
+
            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
              <div class="navbar-nav ml-auto">
                <a class=" mr-2" id="sesion" href="login" role="button">Iniciar Sesión</a>

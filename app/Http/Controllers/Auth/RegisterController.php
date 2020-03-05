@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/Bienvenido';
 
     public function showRegistrationForm()
     {
@@ -64,8 +64,8 @@ protected function validator(array $data)
             'nacimiento' => ['required', 'numeric'],
             'alias'      => ['required', 'string', 'max:255', 'min:6'],
             'telefono'   => ['required', 'numeric']
-            
-             
+
+
         ]);
     }
 
@@ -74,15 +74,15 @@ protected function validator(array $data)
      *
      * @param  array  $data
      * @return \App\User
-     */ 
+     */
     protected function create(array $data)
-    {     
+    {
         $request = app('request');
         if($request->hasfile('avatar')){
             $avatar = $request->file('avatar')->store('public');
             $nombreImagen = basename($avatar);
-            
-            
+
+
         }
 
         return  User::create([
@@ -99,9 +99,12 @@ protected function validator(array $data)
             'telefono'  => $data['telefono'],
             'avatar'  => $nombreImagen
         ]);
-        
-       
 
-     
- }
+}
+        public function Bienvenido(){
+          return view('Users/pagRegistro');
+        }
+
+
+
 }

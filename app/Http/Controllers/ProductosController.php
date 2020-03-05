@@ -51,34 +51,37 @@ class ProductosController extends Controller
     {
     /* Validación */
        $reglas = [
-       'prdNombre' => 'string|unique:productos:prdNombre|required',
+       'prdNombre' => 'string|unique:productos|required',
        'prdPrecio' => 'numeric|min:1000|required',
        'prdImagen' => 'required|file|image|mimes:jpg,jpeg, png, bmp, gif, svg',
        'prdPresentacion' => 'string|required|min:20'
        ];
        $mensajes = [
            'required' => 'Este campo es obligatorio',
-           'min'      => 'El precio minimo es de $1.000',
+           'pdrImagen.min'      => 'El precio minimo es de $1.000',
            'numeric'  => 'El precio debe estar representado por nùmeros',
            'image'    => 'Las extenciones admitidas son JPG, JPEG, PNG, BMP, GIF y SVG. <br> por favor vuelva a intentarlo'
        ];
+
        $this->validate($req,$reglas,$mensajes);
     /* pdrImagen */
     $ruta = $req->file('prdImagen')->store('public');
     $nombreImagen = basename($ruta);
     /* Guardar */
+
        $producto = new Producto;
-       $producto->prdNombre = $req('prdNombre');
-       $producto->prdPrecio = $req('prdPrecio');
-       $producto->idMarca = $req('idMarca');
-       $producto->idCategoria = $req('idCategoria');
-       $producto->idMarca = $req('idMarca');
-       $producto->prdPresentacion = $req('prdPresentacion');
-       $producto->created_at = date('Y-m-d H:i:s');
+       $producto->prdNombre = $req['prdNombre'];
+       $producto->prdPrecio = $req['prdPrecio'];
+       $producto->Marca = $req['idMarca'];
+       $producto->Categoria = $req['idCategoria'];
+       $producto->prdStock = $req['prdStock'];
+       $producto->prdPresentacion = $req['prdPresentacion'];
+       // $producto->created_at = date('Y-m-d H:i:s');
        $producto->prdImagen = $nombreImagen;
        $producto->save();
+       
        return redirect('/adminProductos')
-            ->with('mensaje', 'Producto '.$producto->prdnombre.' agregada con éxito');
+            ->with('mensaje', 'Producto '.$producto->prdNombre.' agregada con éxito');
 
     }
 

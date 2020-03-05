@@ -9,12 +9,12 @@ class Producto extends Model
 
     public function getMarca()
     {
-        return $this->belongsTo('App\Marca', 'idMarca', 'idMarca');
+        return $this->belongsTo('App\Marca', 'marca', 'idMarca');
     }
 
     public function getCategoria()
     {
-        return $this->belongsTo('App\Categoria', 'idCategoria', 'idCategoria');
+        return $this->belongsTo('App\Categoria', 'categoria', 'idCategoria');
     }
 
 

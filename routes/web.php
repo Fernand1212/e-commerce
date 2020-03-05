@@ -14,6 +14,7 @@
 Route::get('/','indexController@home')->name('index');
 
 
+
 ############## CRUD MARCAS ###################
 Route::get('/adminMarcas', 'MarcasController@index');
 Route::get('/formAgregarMarca', 'MarcasController@create');
@@ -37,6 +38,6 @@ Route::post('/agregarCategoria', 'CategoriasController@store');
 
 /*USER*/
 Auth::routes();
-Route::get('/logout', 'LoginController@logout')->name('logout');
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/Perfil', 'indexController@Perfil')->name('Perfil');
+Route::get('/Bienvenido','Auth\RegisterController@Bienvenido')->name('Bienvenido');

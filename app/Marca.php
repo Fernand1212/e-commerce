@@ -8,5 +8,10 @@ class Marca extends Model
 {
     //
     protected $primaryKey = 'idMarca';
-    public $timestamps = false;
+
+
+    public function getProducto()
+    {
+        return $this->belongsTo('App\producto', 'Marca', 'idMarca');
+    }
 }

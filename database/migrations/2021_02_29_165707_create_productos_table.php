@@ -22,10 +22,10 @@ class CreateProductosTable extends Migration
             $table->unsignedBigInteger('categoria');
             $table->foreign('categoria')->references('idCategoria')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->mediumText('prdPresentacion');
-            $table->integer('pdrStock');
+            $table->integer('prdStock');
             $table->text('prdImagen');
             $table->timestamps();
-            
+
         });
     }
 
