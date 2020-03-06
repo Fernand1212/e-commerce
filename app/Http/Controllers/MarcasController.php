@@ -76,7 +76,7 @@ $ruta = $req->file('mkImagen')->store('public');
      */
     public function edit($id)
     {
-        //
+        
         $marca = Marca::find($id);
         return view('Marcas/formModificarMarca', [ 'marca'=>$marca ]);
     }
@@ -90,11 +90,18 @@ $ruta = $req->file('mkImagen')->store('public');
      */
     public function update(Request $request)
     {
-        //
+        $regla = ['mkImagen' => 'required|file|image|mimes:jpg,jpeg,png,bmp,gif,svg'];
+        $mensaje = ['image'    => 'Las extenciones admitidas son JPG, JPEG, PNG, BMP, GIF y SVG. <br> por favor vuelva a intentarlo'];
+        //validacion
+$this->validate($request,$regla,$mensaje );
+$ruta = $request->file('mkImagen')->store('public');
+    $nombreImagen = basename($ruta);
+
         $Marca = Marca::find($request->input('idMarca'));
         $Marca->mkNombre = $request->input('mkNombre');
+        $Marca->mkImagen = $nombreImagen;
         $Marca->save();
-        return redirect('Marcas/adminMarcas')
+        return redirect('/adminMarcas')
             ->with('mensaje', 'Marca '.$Marca->mkNombre.' modificada con éxito');
     }
 
@@ -108,7 +115,7 @@ $ruta = $req->file('mkImagen')->store('public');
     { $id = $req['idMarca'];
         $marca = Marca::find($id);
         $marca->delete();
-        return redirect('/adminMarcas')->with('mensaje', 'Marca' .$marca->mkNombre.'eliminada con éxito');
+        return redirect('/adminMarcas')->with('mensaje', 'Marca ' .$marca->mkNombre.' eliminada con éxito');
         
         
     }

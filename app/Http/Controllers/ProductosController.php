@@ -18,7 +18,7 @@ class ProductosController extends Controller
     {
         //
         $productos = Producto::with('getMarca', 'getCategoria')->get();
-        return view('Productos/adminProductos',
+        return view('Productos/Admin/adminProductos',
             [
                 'productos'=>$productos
             ]);
@@ -34,7 +34,7 @@ class ProductosController extends Controller
         //
         $marcas = Marca::all();
         $categorias = Categoria::all();
-        return view('Productos/formAgregarProducto',
+        return view('Productos/Admin/formAgregarProducto',
             [
                 'marcas'=>$marcas,
                 'categorias'=>$categorias
@@ -72,8 +72,8 @@ class ProductosController extends Controller
        $producto = new Producto;
        $producto->prdNombre = $req['prdNombre'];
        $producto->prdPrecio = $req['prdPrecio'];
-       $producto->Marca = $req['idMarca'];
-       $producto->Categoria = $req['idCategoria'];
+       $producto->marca = $req['idMarca'];
+       $producto->categoria = $req['idCategoria'];
        $producto->prdStock = $req['prdStock'];
        $producto->prdPresentacion = $req['prdPresentacion'];
        // $producto->created_at = date('Y-m-d H:i:s');
@@ -91,9 +91,13 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($marca = null, $cat = null)
     {
-        //
+       $productos = Producto::all();
+       return view('/Productos/all', [
+        'productos'=>$productos
+    ]
+); 
     }
 
     /**
@@ -103,8 +107,13 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $marcas = Marca::all();
+        $categorias = Categoria::all();
+        $producto = Producto::find($id);
+        return view('Productos/Admin/formModificarProducto', [ 
+            'producto'=>$producto,
+            'marcas' => $marcas,
+            'categorias' => $categorias ]);
     }
 
     /**
@@ -114,9 +123,30 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request)
+    
+    { 
+
+        
+        $regla = ['prdImagen' => 'required|file|image|mimes:jpg,jpeg,png,bmp,gif,svg'];
+        $mensaje = ['image'    => 'Las extenciones admitidas son JPG, JPEG, PNG, BMP, GIF y SVG. <br> por favor vuelva a intentarlo'];
+        //validacion
+$this->validate($request,$regla,$mensaje );
+$ruta = $request->file('prdImagen')->store('public');
+    $nombreImagen = basename($ruta);
+
+        $Producto = Producto::find($request->input('idProducto'));
+        $Producto->prdNombre = $request['prdNombre'];
+        $Producto->prdPrecio = $request['prdPrecio'];
+        $Producto->marca = $request['idMarca'];
+        $Producto->categoria = $request['idCategoria'];
+        $Producto->prdStock = $request['prdStock'];
+        $Producto->prdPresentacion = $request['prdPresentacion'];
+        $Producto->prdImagen = $nombreImagen;
+        $Producto->save();
+        return redirect('/adminProductos')
+            ->with('mensaje', 'Producto '.$Producto->prdNombre.' modificada con éxito');
+        
     }
 
     /**
@@ -125,8 +155,15 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Request $req)
+    { $id = $req['idProducto'];
+        $Producto = Producto::find($id);
+        $Producto->delete();
+        return redirect('/adminProductos')->with('mensaje', 'Producto ' .$Producto->prdNombre.' eliminada con éxito');
+        
+        
     }
+
+
+
 }

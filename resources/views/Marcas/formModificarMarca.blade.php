@@ -7,14 +7,17 @@
     @section('main')
 
             <div class="alert bg-light p-4">
-                <form action="/modificarMarca" method="post">
+                <form action="/modificarMarca" method="post" enctype="multipart/form-data" >
                     @csrf
                     Nombre:
                     <br>
                     <input type="text" name="mkNombre" value="{{ $marca->mkNombre }}" class="form-control">
+                    <br>
+                    <input type="file" name="mkImagen" value="{{$marca->mkImagen}} class form- control">
+                    {!! $errors->first('mkImagen',':message')!!}
                     <input type="hidden" name="idMarca" value="{{ $marca->idMarca }}">
                     <br>
-                    <button class="btn btn-dark">Agregar</button>
+                    <button class="btn btn-dark">Modificar</button>
 
                 </form>
             </div>

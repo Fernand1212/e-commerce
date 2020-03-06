@@ -32,17 +32,18 @@
                 <td>{{ $producto->getCategoria->catNombre }}</td>
                 <td>{{ $producto->Presentacion }}</td>
                 <td>{{ $producto->prdStock }}</td>
-                <td><img src="{{ asset('images/productos') }}/{{ $producto->prdImagen }}" class="img-thumbnail"></td>
+                <td><img src="storage/{{ $producto->prdImagen }}" class="img-thumbnail"></td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
-                        Modificar
-                    </a>
+                <a href="/formModificarProducto/{{$producto->idProducto}}" class="btn btn-outline-secondary">
+                            Modificar
+                        </a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
-                        Eliminar
-                    </a>
-                </td>
+                <form action="/eliminarProducto" method="post">
+                    @csrf
+                    <input type="hidden" name="idProducto" value="{{$producto->idProducto}}">
+                    <input type="submit" value="Eliminar" class="btn btn-danger">
+                   </td></form>
             </tr>
         @endforeach
             </tbody>

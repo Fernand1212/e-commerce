@@ -73,12 +73,12 @@
                  {{ Auth::user()->alias }} <span class="caret"></span>
                </a>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
-                   {{ __('Salir') }}
-                 </a>
-                 <a class="dropdown-item" href="{{route('Perfil')}}">
+                                 <a class="dropdown-item" href="{{route('Perfil')}}">
                    {{ __('Mi Perfil') }}
+                 </a>
+                 <a class="dropdown-item" href="" onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                   {{ __('Salir') }}
                  </a>
                  <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                    @csrf

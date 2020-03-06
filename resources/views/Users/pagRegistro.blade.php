@@ -8,7 +8,7 @@
   <h1 class="display-4">Cuenta creada exitosamente!</h1>
   <h2> Bienvenido {{auth()->user()->name}} </h2>
   <hr class="my-4">
-   <a class="btn btn-danger lg" id="Boton" href="usuario.php" role="button">Mi Usuario</a>
+   <a class="btn btn-danger lg" id="Boton" href="{{route('Perfil')}} " role="button">Mi Usuario</a>
   <br><br>
   <a class="btn btn-danger lg" id="Boton" href="/" role="button">Explorar</a>
 </div></div>

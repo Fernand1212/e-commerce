@@ -2,7 +2,7 @@
 
     @section('title', 'Formulario de alta una nueva Marca')
 
-    @section('h1', 'Fornulario de alta una nueva Marca')
+    @section('h1', 'Formulario de alta una nueva Marca')
 
     @section('main')
 
@@ -12,6 +12,7 @@
                     Nombre:
                     <br>
                     <input type="text" name="mkNombre" class="form-control">
+                    {!! $errors->first('mkNombre',':message')!!}
                     <br>
                     Imagen: <br>
             <input type="file" name="mkImagen" class="form-control">

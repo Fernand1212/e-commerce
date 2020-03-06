@@ -15,8 +15,8 @@ class CategoriasController extends Controller
     public function index()
     {
         //
-        $categorias = Categoria::paginate(6);
-        return view('Categorias/adminCategorias', [ 'categorias' =>  $categorias ]);
+        $categoria = Categoria::paginate(6);
+        return view('Categorias/adminCategorias', [ 'categoria' =>  $categoria ]);
     }
 
     /**
@@ -70,7 +70,8 @@ class CategoriasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        return view('Categorias/formModificarCategoria', [ 'categoria'=>$categoria ]);
     }
 
     /**
@@ -80,9 +81,13 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $Categoria = Categoria::find($request->input('idCategoria'));
+        $Categoria->catNombre = $request->input('catNombre');
+        $Categoria->save();
+        return redirect('/adminCategorias')
+            ->with('mensaje', 'Categoria '.$Categoria->catNombre.' modificada con éxito');
     }
 
     /**
@@ -91,8 +96,12 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req)
     {
-        //
+        $id = $req['idCategoria'];
+        $Categoria = Categoria::find($id);
+        $Categoria->delete();
+        return redirect('/adminCategorias')->with('mensaje', 'Categoria ' .$Categoria->catNombre.' eliminada con éxito');
+        
     }
 }

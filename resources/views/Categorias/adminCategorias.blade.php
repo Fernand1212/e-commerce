@@ -17,26 +17,27 @@
             </tr>
             </thead>
             <tbody>
-            @foreach( $categorias as $categoria )
+            @foreach( $categoria as $cat )
                 <tr>
-                    <td>{{$categoria->idCategoria}}</td>
-                    <td>{{$categoria->catNombre}}</td>
+                    <td>{{$cat->idCategoria}}</td>
+                    <td>{{$cat->catNombre}}</td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary">
+                        <a href="/formModificarCategoria/{{$cat->idCategoria}}" class="btn btn-outline-secondary">
                             Modificar
                         </a>
                     </td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary">
-                            Eliminar
-                        </a>
-                    </td>
+                    <form action="/eliminarCategoria" method="post">
+                    @csrf
+                    <input type="hidden" name="idCategoria" value="{{$cat->idCategoria}}">
+                    <input type="submit" value="Eliminar" class="btn btn-danger">
+                   </td></form>
                 </tr>
             @endforeach
             </tbody>
         </table>
 
-        {{ $categorias->links() }}
+        {{ $categoria->links() }}
 
 
     @endsection

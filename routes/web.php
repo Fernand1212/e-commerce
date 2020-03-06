@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\ProductosController;
+
 Route::get('/','indexController@home')->name('index');
 
 
@@ -24,22 +26,29 @@ Route::post('/modificarMarca', 'MarcasController@update');
 Route::post('/eliminarMarca', 'MarcasController@destroy');
 
 
+############## CRUD CATEGORIAS ###################
+Route::get('/adminCategorias', 'CategoriasController@index');
+Route::get('/formAgregarCategoria', 'CategoriasController@create');
+Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit');
+Route::post('/agregarCategoria', 'CategoriasController@store');
+Route::post('/modificarCategoria', 'CategoriasController@update');
+Route::post('/eliminarCategoria', 'CategoriasController@destroy');
+
 ############## CRUD PRODUCTOS ###################
 Route::get('/adminProductos', 'ProductosController@index');
 Route::get('/formAgregarProducto', 'ProductosController@create');
 Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
 Route::post('/agregarProducto', 'ProductosController@store');
 Route::post('/modificarProducto', 'ProductosController@update');
+Route::post('/eliminarProducto', 'ProductosController@destroy');
 
-############## CRUD CATEGORIAS ###################
-Route::get('/adminCategorias', 'CategoriasController@index');
-Route::get('/formAgregarCategoria', 'CategoriasController@create');
-Route::post('/agregarCategoria', 'CategoriasController@store');
+############## VISTA PRODUCTOS ###################
+
+Route::get('/vistaProductos/{marca?}/{categoria?}', 'ProductosController@show');
 
 /*USER*/
 Auth::routes();
 
 Route::get('/Perfil', 'indexController@Perfil')->name('Perfil');
-Route::get('/Bienvenido','Auth\RegisterController@Bienvenido')->name('Bienvenido');
 Route::get('/bienvenidos', function (){
     return view('/Users/pagRegistro');});
