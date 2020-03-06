@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/Bienvenido';
+    protected $redirectTo = '/bienvenidos';
 
     public function showRegistrationForm()
     {
@@ -102,7 +102,7 @@ protected function validator(array $data)
 
 }
         public function Bienvenido(){
-          return view('Users/pagRegistro');
+          return view('users/pagRegistro');
         }
 
 

@@ -63,7 +63,7 @@
            </div> @endif
            @else
            <div class="widget-header  mr-3">
-             <a href="usuario.php"><img src="/storage/{{Auth::user()->avatar}}" class="mr-3 icon icon-sm rounded-circle border"></a>
+             <a href="{{route('Perfil')}}"><img src="/storage/{{Auth::user()->avatar}}" class="mr-3 icon icon-sm rounded-circle border"></a>
            </div>
            <div class="widget-header icontext">
              <div class="widget-header icontext">

@@ -41,3 +41,5 @@ Auth::routes();
 
 Route::get('/Perfil', 'indexController@Perfil')->name('Perfil');
 Route::get('/Bienvenido','Auth\RegisterController@Bienvenido')->name('Bienvenido');
+Route::get('/bienvenidos', function (){
+    return view('/Users/pagRegistro');});
