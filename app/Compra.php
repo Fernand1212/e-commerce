@@ -10,11 +10,11 @@ class Compra extends Model
 
     public function getProducto()
     {
-        return $this->belongsTo('App\Producto', 'idMarca', 'idMarca');
+        return $this->belongsTo('App\Producto', 'marca', 'idMarca');
     }
 
     public function getCategoria()
     {
-        return $this->belongsTo('App\Categoria', 'idCategoria', 'idCategoria');
+        return $this->belongsTo('App\Categoria', 'categoria', 'idCategoria');
     }
 }

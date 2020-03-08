@@ -16,7 +16,7 @@ protected $primaryKey = 'idProducto';
 
     public function getCategoria()
     {
-        return $this->belongsTo('App\Categoria', 'categoria', 'idCategoria');
+        return $this->hasMany('App\Categoria', 'categoria', 'idCategoria');
     }
 
 

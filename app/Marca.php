@@ -12,6 +12,6 @@ class Marca extends Model
 
     public function getProducto()
     {
-        return $this->belongsTo('App\producto', 'Marca', 'idMarca');
+        return $this->hasMany('App\Producto', 'marca', 'idMarca');
     }
 }

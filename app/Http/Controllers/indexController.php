@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categoria;
 use App\Marca;
+use App\Producto;
 class indexController extends Controller
 {
     public function Home(){
-        $Marcas = Marca::paginate(3);
-        return view('/layout/index', compact('Marcas', $Marcas));
+      $categorias = new Categoria;
+        $marcas = Marca::paginate(3);
+        $productos = Producto::all();
+        return view('/layout/index',['marcas' =>$marcas,
+        'categorias'=> $categorias,
+        'productos'=>$productos]);
     }
+
 public function Perfil(){
   return view('/Users/Perfil');
  

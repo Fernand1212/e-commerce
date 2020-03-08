@@ -1,4 +1,5 @@
  <!-- NAV -->
+ 
  <div>
    <a href="Contacto.php" id="aa"> Contactanos</a>
    <nav class=" navbar navbar-expand-lg navbar-light" id="inicio">
@@ -7,15 +8,20 @@
        <span class="navbar-toggler-icon"></span>
      </button>
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <input type="hidden" name="idMarca">
+     <input type="hidden" name="idCat">
        <ul class="navbar-nav mr-auto">
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Hombre
-           </a>
+           Hombre 
+          </a>
+           @foreach($marca as $marca)
+           @dd($marca)
+           @endforeach
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="producto-vans.php">VANS</a>
-             <a class="dropdown-item" href="producto.php">NIKE</a>
-             <a class="dropdown-item" href="producto-adidas.php">ADIDAS</a>
+             <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}">VANS</a>
+             <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}">NIKE</a>
+             <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}">ADIDAS</a>
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="todos-productos.php">TODAS</a>
            </div>

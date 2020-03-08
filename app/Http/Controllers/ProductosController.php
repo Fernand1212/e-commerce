@@ -91,13 +91,25 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idMarca,$idCat = null)
     {
-       $productos = Producto::find($id);
-       return view('/Productos/all', [
+       
+       $marca = Marca::find($idMarca);
+       $categorias = Categoria::find($idCat);
+       $productos = Producto::where('marca',$idMarca)->orWhere('categoria',$idCat)->get();
+       return view('/Productos/Marca',[
+        'marca' =>$marca,
+        'categorias' => $categorias,
         'productos'=>$productos
+        
         ]
-        );}
+        );
+    }
+   
+     
+        
+    
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -163,6 +175,9 @@ $ruta = $request->file('prdImagen')->store('public');
 
     }
 
+    public function perfil($nombre){
+      
+    }
 
 
 }
