@@ -79,7 +79,7 @@ class ProductosController extends Controller
        // $producto->created_at = date('Y-m-d H:i:s');
        $producto->prdImagen = $nombreImagen;
        $producto->save();
-       
+
        return redirect('/adminProductos')
             ->with('mensaje', 'Producto '.$producto->prdNombre.' agregada con éxito');
 
@@ -91,14 +91,13 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($marca = null, $cat = null)
+    public function show($id)
     {
-       $productos = Producto::all();
+       $productos = Producto::find($id);
        return view('/Productos/all', [
         'productos'=>$productos
-    ]
-); 
-    }
+        ]
+        );}
 
     /**
      * Show the form for editing the specified resource.
@@ -110,7 +109,7 @@ class ProductosController extends Controller
     {   $marcas = Marca::all();
         $categorias = Categoria::all();
         $producto = Producto::find($id);
-        return view('Productos/Admin/formModificarProducto', [ 
+        return view('Productos/Admin/formModificarProducto', [
             'producto'=>$producto,
             'marcas' => $marcas,
             'categorias' => $categorias ]);
@@ -124,10 +123,10 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
-    
-    { 
 
-        
+    {
+
+
         $regla = ['prdImagen' => 'required|file|image|mimes:jpg,jpeg,png,bmp,gif,svg'];
         $mensaje = ['image'    => 'Las extenciones admitidas son JPG, JPEG, PNG, BMP, GIF y SVG. <br> por favor vuelva a intentarlo'];
         //validacion
@@ -146,7 +145,7 @@ $ruta = $request->file('prdImagen')->store('public');
         $Producto->save();
         return redirect('/adminProductos')
             ->with('mensaje', 'Producto '.$Producto->prdNombre.' modificada con éxito');
-        
+
     }
 
     /**
@@ -160,8 +159,8 @@ $ruta = $request->file('prdImagen')->store('public');
         $Producto = Producto::find($id);
         $Producto->delete();
         return redirect('/adminProductos')->with('mensaje', 'Producto ' .$Producto->prdNombre.' eliminada con éxito');
-        
-        
+
+
     }
 
 

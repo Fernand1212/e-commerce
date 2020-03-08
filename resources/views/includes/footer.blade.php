@@ -1,4 +1,4 @@
-  
+
 <!--container.//-->
 <article class="bg-secondary mb-3  container-fluid">
   <div class="card-body text-center">
@@ -91,19 +91,6 @@
         <p>
           <i class="fas fa-phone mr-3"></i> <a href="tel:+54 234 567 88" style="text-decoration:none"> +54 234 567 88</a>
         </p>
-        <!-- <p>
-                    <a href="#!">Mi cuenta</a>
-                  </p>
-                  <p>
-                    <a href="#!">Become an Affiliate</a>
-                  </p>
-                  <p>
-                    <a href="#!">Tasas de envío</a>
-                  </p>
-                  <p>
-                    <a href="#!">Ayuda</a>
-                  </p> -->
-
 
       </div>
 

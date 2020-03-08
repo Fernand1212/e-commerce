@@ -44,7 +44,7 @@ Route::post('/eliminarProducto', 'ProductosController@destroy');
 
 ############## VISTA PRODUCTOS ###################
 
-Route::get('/vistaProductos/{marca?}/{categoria?}', 'ProductosController@show');
+Route::get('/Productos/{marca?}', 'ProductosController@show');
 
 /*USER*/
 Auth::routes();

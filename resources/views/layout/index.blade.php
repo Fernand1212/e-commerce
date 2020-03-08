@@ -56,7 +56,7 @@
   <div class="row">
     <div class="col-md-4">
       @foreach ($Marcas as $marca)<figure class="card card-product">
-        <div class="img-wrap"><a href="producto.php"><img href="producto.php" src="/storage/{{$marca->mkImagen}}"></a></div>
+        <div class="img-wrap"><a href="/Productos/{{$marca->mkNombre}}"><img href="/Productos/{{$marca->mkNombre}}" src="/storage/{{$marca->mkImagen}}"></a></div>
         <figcaption class="info-wrap">
           <h4 class="title">{{$marca->mkNombre}}</h4>
         </figcaption>
