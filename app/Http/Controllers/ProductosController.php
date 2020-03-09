@@ -180,7 +180,7 @@ $ruta = $request->file('prdImagen')->store('public');
 
         $producto = Producto::find($id);
 
-   return view('ListarProductos/Producto', $producto);
+   return view('ListarProductos/Producto', ["producto"=> $producto]);
     }
 
 

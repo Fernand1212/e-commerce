@@ -8,47 +8,41 @@
 
 
 
-    {{-- <div class="portada">
-        <div class="jumbotron jumbotron-fluid" style="background-color: white; max-heigth: 30%; ">
-      <div class="jumbo">
+    <div  >
+        <div class="">
+      <div ">
 
-
-       <img src="/storage/{{$marca->mkImagen}}" alt="" style="max-width: 50%; max-height: 50%;">
-
+<p class="text-center">
+       <img id="portada"  src="/storage/{{$marca->mkImagen}}" alt="" style="max-width:20em; max-height: 20em; ">
+</p>
 
       </div>
     </div>
-  </div> --}}
+  </div>
 
-
-  @foreach( $productos as $producto)
   <div class="container">
     <div class="row" id="marco">
-        <div class="col-6 col-lg-4 col-xl-3 mb-5">
-        <a href="/Producto/{{$producto->idProducto}}">
-            <div  class="card" style=""id="tar">
-        <img id="hola2" src="/storage/{{$producto->prdImagen}}" class="card-img-top" alt="..."></a>
-      <div class="card-body" id="tarbody">
-          <h5  class="card-title">
-            {{$producto->prdNombre}}
+        @foreach( $productos as $producto)
+    <div style=""
+    class="col-6 col-lg-4 col-xl-3 mb-5">
+    <a href="/Producto/{{$producto->idProducto}}">
+        <div  class="card" id="tar">
+    <img src="/storage/{{$producto->prdImagen}}" class="card-img-top" alt="Imagen Zapatillas">
+        <div class="card-body" id="tarbody">
 
-          </h5>
-         <div>
-          <p  class="card-text" id="parra">${{$producto->prdPrecio}}</p>
-          {{-- <div class="iconitos"> --}}
-          {{-- <a href=""> <i class="fa fa-shopping-cart"></i></a> --}}
-          {{-- </div> --}}
-         </div>
-      </div>
-            </div>
-        </div>
-      </div>
-        </div>
-      </div>
+          <h5 class="card-title">{{$producto->prdNombre}}</h5>
+          {{-- <p class="card-text" >{{$Productos->prdPresentacion}}</p> --}}
+          <br>
+          <p id="parra" c">${{$producto->prdPrecio}}</p>
+    </a>
+
     </div>
- @endforeach
+        </div>
+      </div>
 
+      @endforeach
 
+</div>
 
 </div>
 </div>

@@ -16,13 +16,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
          <div class="carousel-item active">
-        <img src="img/nike-2.jpg" class="d-block w-100">
+        <img src="/storage/{{$producto->prdImagen}}" class="d-block w-100">
          </div>
          <div class="carousel-item">
-        <img src="img/nike-2-2.jpg" class="d-block w-100">
+        <img src="/storage/{{$producto->prdImagen}}" class="d-block w-100">
         </div>
         <div class="carousel-item">
-        <img src="img/nike-2-3.jpg" class="d-block w-100">
+        <img src="/storage/{{$producto->prdImagen}}" class="d-block w-100">
         </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -34,7 +34,7 @@
         <span class="sr-only">Next</span>
         </a>
 
-
+<br>
         <div class="colores">
             <button type="button" class="btn btn-light" style="color:rgba(255, 255, 255, 0);">BL</button>
             <button type="button" class="btn btn-secondary" style="color:rgba(129, 127, 127, 0);">BL</button>
@@ -51,9 +51,9 @@
 
          </ul>
 
-            <h2></h2>
+            <h2>{{$producto->prdNombre}}</h2>
 
-            <p class="precio"> $5.000</p>
+            <p style="Font-size:3em" class="precio">${{$producto->prdPrecio}}</p>
 
 
         {{-- <div class="talles">
@@ -85,7 +85,7 @@
                 </div>
                   <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minus molestiae a, eaque voluptates nobis eligendi, atque harum, tempora debitis reprehenderit rerum ad et nulla sequi dolore quia libero perferendis?
+                     {{$producto->prdPresentacion}}
                     </div>
                   </div>
                 </div>
