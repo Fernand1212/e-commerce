@@ -1,7 +1,7 @@
  <!-- NAV -->
 
  <div>
-   <a href="Contacto.php" id="aa"> Contactanos</a>
+   <a href="/Contacto" id="aa"> Contactanos</a>
    <nav class=" navbar navbar-expand-lg navbar-light" id="inicio">
      <h4 class=" mr-3 text-uppercase font-weight-bold"><a href="/" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,13 +13,12 @@
        <ul class="navbar-nav mr-auto">
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Hombre
+           Adulto
           </a>
-
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="/Productos/">VANS</a>
-             <a class="dropdown-item" href="/Productos/">NIKE</a>
-             <a class="dropdown-item" href="/Productos/">ADIDAS</a>
+             <a class="dropdown-item" href="/Productos/VANS">VANS</a>
+             <a class="dropdown-item" href="/Productos/NIKE">NIKE</a>
+             <a class="dropdown-item" href="/Productos/ADIDAS">ADIDAS</a>
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="todos-productos.php">TODAS</a>
            </div>
@@ -27,24 +26,13 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Mujer
-             </a>
-             <div class="dropdown-menu">
-               <a class="dropdown-item" href="producto-vans.php">VANS</a>
-               <a class="dropdown-item" href="producto.php">NIKE</a>
-               <a class="dropdown-item" href="producto-adidas.php">ADIDAS</a>
-               <div class="dropdown-divider"></div>
-               <a class="dropdown-item" href="todos-productos.php">TODAS</a>
-             </div>
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                Niños
              </a>
              <div class="dropdown-menu">
-               <a class="dropdown-item" href="producto-vans.php">VANS</a>
-               <a class="dropdown-item" href="producto.php">NIKE</a>
-               <a class="dropdown-item" href="producto-adidas.php">ADIDAS</a>
+               <a class="dropdown-item" href="#1">VANS</a>
+               <a class="dropdown-item" href="#2">NIKE</a>
+               <a class="dropdown-item" href="#3">ADIDAS</a>
                <div class="dropdown-divider"></div>
                <a class="dropdown-item" href="todos-productos.php">TODAS</a>
              </div>

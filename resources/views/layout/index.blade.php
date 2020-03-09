@@ -52,12 +52,13 @@
 
 <!-- tarjetas -->
 
-<div class="container tarjetas">
+<div class="container tarjetas" >
   <div class="row">
     <div class="col-md-4">
-      @foreach ($marcas as $marca)<figure class="card card-product">
-        
-        <div class="img-wrap"><a href="/Productos/{{$marca->idMarca}}"><img href="/Productos/{{$marca->mkImagen}}" src="/storage/{{$marca->mkImagen}}"></a></div>
+      @foreach ($marcas as $marca)
+      <figure class="card card-product">
+
+        <div class="img-wrap"><a href="/Productos/{{$marca->idMarca}}" ><img href="/Productos/{{$marca->mkImagen}}" src="/storage/{{$marca->mkImagen}}"></a></div>
         <figcaption class="info-wrap">
           <h4 class="title">{{$marca->mkNombre}}</h4>
           <input type="hidden" name="idMarca">

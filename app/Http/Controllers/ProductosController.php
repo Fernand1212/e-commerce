@@ -34,7 +34,7 @@ class ProductosController extends Controller
         //
         $marcas = Marca::all();
         $categorias = Categoria::all();
-        return view('Productos/Admin/formAgregarProducto',
+        return view('Admin/Productos/formAgregarProducto',
             [
                 'marcas'=>$marcas,
                 'categorias'=>$categorias
@@ -121,7 +121,7 @@ class ProductosController extends Controller
     {   $marcas = Marca::all();
         $categorias = Categoria::all();
         $producto = Producto::find($id);
-        return view('Productos/Admin/formModificarProducto', [
+        return view('Admin/Productos/formModificarProducto', [
             'producto'=>$producto,
             'marcas' => $marcas,
             'categorias' => $categorias ]);

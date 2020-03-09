@@ -17,10 +17,12 @@ class indexController extends Controller
         'productos'=>$productos]);
     }
 
-public function Perfil(){
+protected function Perfil(){
   return view('/Users/Perfil');
- 
-}
-   
 }
 
+public function Contacto() {
+  return view('/Contacto');
+}
+
+}

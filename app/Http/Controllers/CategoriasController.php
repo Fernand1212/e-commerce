@@ -27,7 +27,7 @@ class CategoriasController extends Controller
     public function create()
     {
         //
-        return view('Categorias/formAgregarCategoria');
+        return view('Admin/Categorias/formAgregarCategoria');
     }
 
     /**
@@ -71,7 +71,7 @@ class CategoriasController extends Controller
     public function edit($id)
     {
         $categoria = Categoria::find($id);
-        return view('Categorias/formModificarCategoria', [ 'categoria'=>$categoria ]);
+        return view('Admin/Categorias/formModificarCategoria', [ 'categoria'=>$categoria ]);
     }
 
     /**

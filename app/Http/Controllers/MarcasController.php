@@ -31,7 +31,7 @@ class MarcasController extends Controller
     public function create()
     {
         //
-        return view('Marcas/formAgregarMarca');
+        return view('Admin/Marcas/formAgregarMarca');
     }
 
     /**
@@ -78,7 +78,7 @@ $ruta = $req->file('mkImagen')->store('public');
     {
 
         $marca = Marca::find($id);
-        return view('Marcas/formModificarMarca', [ 'marca'=>$marca ]);
+        return view('Admin/Marcas/formModificarMarca', [ 'marca'=>$marca ]);
     }
 
     /**
