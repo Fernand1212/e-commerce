@@ -18,29 +18,29 @@ Route::get('/','indexController@home')->name('index');
 
 
 ############## CRUD MARCAS ###################
-Route::get('/adminMarcas', 'MarcasController@index');
-Route::get('/formAgregarMarca', 'MarcasController@create');
-Route::get('/formModificarMarca/{id}', 'MarcasController@edit');
-Route::post('/agregarMarca', 'MarcasController@store');
-Route::post('/modificarMarca', 'MarcasController@update');
-Route::post('/eliminarMarca', 'MarcasController@destroy');
+Route::get('/adminMarcas', 'MarcasController@index')->middleware('Admin');
+Route::get('/formAgregarMarca', 'MarcasController@create')->middleware('Admin');
+Route::get('/formModificarMarca/{id}', 'MarcasController@edit')->middleware('Admin');
+Route::post('/agregarMarca', 'MarcasController@store')->middleware('Admin');
+Route::post('/modificarMarca', 'MarcasController@update')->middleware('Admin');
+Route::post('/eliminarMarca', 'MarcasController@destroy')->middleware('Admin');
 
 
 ############## CRUD CATEGORIAS ###################
-Route::get('/adminCategorias', 'CategoriasController@index');
-Route::get('/formAgregarCategoria', 'CategoriasController@create');
-Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit');
-Route::post('/agregarCategoria', 'CategoriasController@store');
-Route::post('/modificarCategoria', 'CategoriasController@update');
-Route::post('/eliminarCategoria', 'CategoriasController@destroy');
+Route::get('/adminCategorias', 'CategoriasController@index')->middleware('Admin');
+Route::get('/formAgregarCategoria', 'CategoriasController@create')->middleware('Admin');
+Route::get('/formModificarCategoria/{id}', 'CategoriasController@edit')->middleware('Admin');
+Route::post('/agregarCategoria', 'CategoriasController@store')->middleware('Admin');
+Route::post('/modificarCategoria', 'CategoriasController@update')->middleware('Admin');
+Route::post('/eliminarCategoria', 'CategoriasController@destroy')->middleware('Admin');
 
 ############## CRUD PRODUCTOS ###################
-Route::get('/adminProductos', 'ProductosController@index');
-Route::get('/formAgregarProducto', 'ProductosController@create');
-Route::get('/formModificarProducto/{id}', 'ProductosController@edit');
-Route::post('/agregarProducto', 'ProductosController@store');
-Route::post('/modificarProducto', 'ProductosController@update');
-Route::post('/eliminarProducto', 'ProductosController@destroy');
+Route::get('/adminProductos', 'ProductosController@index')->name('productos')->middleware('Admin');
+Route::get('/formAgregarProducto', 'ProductosController@create')->middleware('Admin');
+Route::get('/formModificarProducto/{id}', 'ProductosController@edit')->middleware('Admin');
+Route::post('/agregarProducto', 'ProductosController@store')->middleware('Admin');
+Route::post('/modificarProducto', 'ProductosController@update')->middleware('Admin');
+Route::post('/eliminarProducto', 'ProductosController@destroy')->middleware('Admin');
 
 ############## VISTA PRODUCTOS ###################
 
@@ -50,6 +50,6 @@ Route::get('/Productos/{marca?}/{categoria?}', 'ProductosController@show');
 /*USER*/
 Auth::routes();
 
-Route::get('/Perfil', 'indexController@Perfil')->name('Perfil');
+Route::get('/Perfil', 'indexController@Perfil')->name('Perfil')->Middleware('auth');
 Route::get('/bienvenidos', function (){
-    return view('/Users/pagRegistro');});
+    return view('/Users/pagRegistro');})->Middleware('auth');

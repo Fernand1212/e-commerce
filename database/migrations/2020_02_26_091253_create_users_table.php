@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('alias',100);
             $table->string('telefono',50);
             $table->text('avatar');
+            $table->enum('role',['admin','user'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

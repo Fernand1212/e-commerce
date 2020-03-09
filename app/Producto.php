@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
-{ 
+{
 
 protected $primaryKey = 'idProducto';
 
@@ -16,7 +16,7 @@ protected $primaryKey = 'idProducto';
 
     public function getCategoria()
     {
-        return $this->hasMany('App\Categoria', 'categoria', 'idCategoria');
+        return $this->belongsTo('App\Categoria', 'categoria', 'idCategoria');
     }
 
 

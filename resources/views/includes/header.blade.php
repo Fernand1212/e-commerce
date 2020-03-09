@@ -1,5 +1,5 @@
  <!-- NAV -->
- 
+
  <div>
    <a href="Contacto.php" id="aa"> Contactanos</a>
    <nav class=" navbar navbar-expand-lg navbar-light" id="inicio">
@@ -13,15 +13,13 @@
        <ul class="navbar-nav mr-auto">
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Hombre 
+           Hombre
           </a>
-           @foreach($marca as $marca)
-           @dd($marca)
-           @endforeach
+
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}">VANS</a>
-             <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}">NIKE</a>
-             <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}">ADIDAS</a>
+             <a class="dropdown-item" href="/Productos/">VANS</a>
+             <a class="dropdown-item" href="/Productos/">NIKE</a>
+             <a class="dropdown-item" href="/Productos/">ADIDAS</a>
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="todos-productos.php">TODAS</a>
            </div>
@@ -86,6 +84,10 @@
                   document.getElementById('logout-form').submit();">
                    {{ __('Salir') }}
                  </a>
+                 @if (Auth::user()->role=='admin')
+                 <a class="dropdown-item" href="{{route('productos')}}">
+                 {{ ('Panel Administrativo') }} </a>
+                @endif
                  <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                    @csrf
                  </form>

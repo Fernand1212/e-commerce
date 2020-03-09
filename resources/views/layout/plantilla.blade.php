@@ -32,7 +32,7 @@
 
     <footer class="footer">
         <div class="inner">
-           &copy;  @include('includes.footer')
+            @include('includes.footer')
         </div>
     </footer>
     </div>

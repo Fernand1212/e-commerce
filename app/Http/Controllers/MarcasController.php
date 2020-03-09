@@ -16,7 +16,7 @@ class MarcasController extends Controller
     {
         //
         $marcas = Marca::paginate(8);
-        return view('Marcas/adminMarcas',
+        return view('Admin/Marcas/adminMarcas',
                 [
                     'marcas'=>$marcas
                 ]
@@ -76,7 +76,7 @@ $ruta = $req->file('mkImagen')->store('public');
      */
     public function edit($id)
     {
-        
+
         $marca = Marca::find($id);
         return view('Marcas/formModificarMarca', [ 'marca'=>$marca ]);
     }
@@ -116,7 +116,7 @@ $ruta = $request->file('mkImagen')->store('public');
         $marca = Marca::find($id);
         $marca->delete();
         return redirect('/adminMarcas')->with('mensaje', 'Marca ' .$marca->mkNombre.' eliminada con éxito');
-        
-        
+
+
     }
 }

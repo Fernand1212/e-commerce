@@ -16,7 +16,7 @@ class CategoriasController extends Controller
     {
         //
         $categoria = Categoria::paginate(6);
-        return view('Categorias/adminCategorias', [ 'categoria' =>  $categoria ]);
+        return view('Admin/Categorias/adminCategorias', [ 'categoria' =>  $categoria ]);
     }
 
     /**
@@ -102,6 +102,6 @@ class CategoriasController extends Controller
         $Categoria = Categoria::find($id);
         $Categoria->delete();
         return redirect('/adminCategorias')->with('mensaje', 'Categoria ' .$Categoria->catNombre.' eliminada con éxito');
-        
+
     }
 }

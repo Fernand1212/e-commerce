@@ -18,7 +18,7 @@ class ProductosController extends Controller
     {
         //
         $productos = Producto::with('getMarca', 'getCategoria')->get();
-        return view('Productos/Admin/adminProductos',
+        return view('/Admin/Productos/adminProductos',
             [
                 'productos'=>$productos
             ]);
@@ -93,7 +93,7 @@ class ProductosController extends Controller
      */
     public function show($idMarca,$idCat = null)
     {
-       
+
        $marca = Marca::find($idMarca);
        $categorias = Categoria::find($idCat);
        $productos = Producto::where('marca',$idMarca)->orWhere('categoria',$idCat)->get();
@@ -101,15 +101,15 @@ class ProductosController extends Controller
         'marca' =>$marca,
         'categorias' => $categorias,
         'productos'=>$productos
-        
+
         ]
         );
     }
-   
-     
-        
-    
-    
+
+
+
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -176,7 +176,7 @@ $ruta = $request->file('prdImagen')->store('public');
     }
 
     public function perfil($nombre){
-      
+
     }
 
 
