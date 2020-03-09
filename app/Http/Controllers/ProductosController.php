@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class ProductosController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -175,8 +176,11 @@ $ruta = $request->file('prdImagen')->store('public');
 
     }
 
-    public function perfil($nombre){
+    public function perfilProducto($id){
 
+        $producto = Producto::find($id);
+
+   return view('ListarProductos/Producto', $producto);
     }
 
 

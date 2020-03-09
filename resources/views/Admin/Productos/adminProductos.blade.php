@@ -17,7 +17,7 @@
                 <th>Stock</th>
                 <th>Imagen</th>
                 <th colspan="2">
-                    <a href="/formAgregarProducto" class="btn btn-dark">
+                    <a href="/formAgregarProducto" class="btn btn-success">
                         Agregar
                     </a>
                 </th>
@@ -46,7 +46,7 @@
                    </td></form>
             </tr>
         @endforeach
-        
+
             </tbody>
         </table>
 

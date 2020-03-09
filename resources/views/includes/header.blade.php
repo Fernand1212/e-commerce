@@ -39,20 +39,21 @@
            </li>
        </ul>
        <div style="padding=5%">
-         <div class="widgets-wrap float-md-right">
-           <div class="widget-header  mr-3">
-             <a href="carrito.php" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-             <span class=" badge-pill badge-danger notify">0</span>
-           </div>
+        <div class="widgets-wrap float-md-left ">
+          <div class="widget-header  mr-3">
+            <a href="carrito.php" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+            <span class=" badge-pill badge-danger notify">0</span>
+          </div>
+        </div>
            @guest
 
-           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-             <div class="navbar-nav ml-auto">
-               <a class=" mr-2" id="sesion" href="login" role="button">Iniciar Sesión</a>
-               @if (Route::has('register'))
-               <a class="  mr-2" style="padding-left: 2%;" id="sesion" href="register" role="button">Registrarme</a>
-             </div>
-           </div> @endif
+           <div class="collapse navbar-collapse float-md-right" style="margin-top:5%" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class=" mr-2" id="sesion" href="login" role="button">Iniciar Sesión</a>
+              @if (Route::has('register'))
+              |<a class="  mr-2" style="padding-left: 2%;" id="sesion" href="register" role="button">Registrarme</a>
+            </div>
+          </div> @endif
            @else
            <div class="widget-header  mr-3">
              <a href="{{route('Perfil')}}"><img src="/storage/{{Auth::user()->avatar}}" class="mr-3 icon icon-sm rounded-circle border"></a>
@@ -60,27 +61,27 @@
            <div class="widget-header icontext">
              <div class="widget-header icontext">
              </div>
-             <lu class="nav-item dropdown">
+             <ul class="nav-item dropdown">
                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                  {{ Auth::user()->alias }} <span class="caret"></span>
                </a>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                 <a class="dropdown-item" href="{{route('Perfil')}}">
-                   {{ __('Mi Perfil') }}
-                 </a>
-                 <a class="dropdown-item" href="" onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-                   {{ __('Salir') }}
-                 </a>
-                 @if (Auth::user()->role=='admin')
-                 <a class="dropdown-item" href="{{route('productos')}}">
-                 {{ ('Panel Administrativo') }} </a>
-                @endif
-                 <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                <a class="dropdown-item" href="{{route('Perfil')}}">
+  {{ __('Mi Perfil') }}
+</a>
+<a class="dropdown-item" href="" onclick="event.preventDefault();
+ document.getElementById('logout-form').submit();">
+  {{ __('Salir') }}
+</a>
+@if (Auth::user()->role=='admin')
+<a class="dropdown-item" href="{{route('productos')}}">
+{{ ('Panel Administrativo') }} </a>
+@endif
+<form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                    @csrf
                  </form>
                </div>
-             </lu>
+              </ul>
              @endguest
    </nav>
  </div>

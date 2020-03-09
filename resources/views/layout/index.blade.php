@@ -45,27 +45,28 @@
 
 
 
-
-
-
-
-
 <!-- tarjetas -->
 
-<div class="container tarjetas" >
-  <div class="row">
-    <div class="col-md-4">
-      @foreach ($marcas as $marca)
-      <figure class="card card-product">
+<div class="container tarjetas">
+    <div class="row">
+      <div class="col-md-4">
+        @foreach ($marcas as $marca)<figure class="card card-product">
 
-        <div class="img-wrap"><a href="/Productos/{{$marca->idMarca}}" ><img href="/Productos/{{$marca->mkImagen}}" src="/storage/{{$marca->mkImagen}}"></a></div>
-        <figcaption class="info-wrap">
-          <h4 class="title">{{$marca->mkNombre}}</h4>
-          <input type="hidden" name="idMarca">
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-md-4"> @endforeach
+          <div class="img-wrap">
+              <a href="/Productos/{{$marca->idMarca}}">
+                  <img href="" src="/storage/{{$marca->mkImagen}}">
+              </a>
+          </div>
+          <figcaption class="info-wrap" style="background-color: rgba(185, 182, 182, 0.904);">
+            <h4 style="color:black" class="title">{{$marca->mkNombre}}</h4>
+            <input type="hidden" name="idMarca">
+            <p>{{$marca->Eslogan}}</</p>
+          </figcaption>
+
+        </figure>
+      </div>
+      <div class="col-md-4"> @endforeach
+
 
 
     </div>

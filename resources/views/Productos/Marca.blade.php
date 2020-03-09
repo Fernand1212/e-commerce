@@ -7,9 +7,9 @@
 
 
 
-<div id="hoy">
-  <div class="portada">
-    <div class="jumbotron jumbotron-fluid" style="background-color: white; ">
+
+    {{-- <div class="portada">
+        <div class="jumbotron jumbotron-fluid" style="background-color: white; max-heigth: 30%; ">
       <div class="jumbo">
 
 
@@ -18,13 +18,46 @@
 
       </div>
     </div>
-  </div>
+  </div> --}}
+
+
+  @foreach( $productos as $producto)
+  <div class="container">
+    <div class="row" id="marco">
+        <div class="col-6 col-lg-4 col-xl-3 mb-5">
+        <a href="/Producto/{{$producto->idProducto}}">
+            <div  class="card" style=""id="tar">
+        <img id="hola2" src="/storage/{{$producto->prdImagen}}" class="card-img-top" alt="..."></a>
+      <div class="card-body" id="tarbody">
+          <h5  class="card-title">
+            {{$producto->prdNombre}}
+
+          </h5>
+         <div>
+          <p  class="card-text" id="parra">${{$producto->prdPrecio}}</p>
+          {{-- <div class="iconitos"> --}}
+          {{-- <a href=""> <i class="fa fa-shopping-cart"></i></a> --}}
+          {{-- </div> --}}
+         </div>
+      </div>
+            </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+ @endforeach
+
+
+
+</div>
+</div>
 
 
 
 
 
-
+{{--
   <section id="zapatillas">
 
 
@@ -48,7 +81,7 @@
     </div>
    @endforeach
 
-    </section>
+    </section> --}}
 
 </div>
 </div>

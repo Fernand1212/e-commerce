@@ -40,7 +40,7 @@ color: #0e76a8;
 	font-size: 17px;
 	padding: 0%;
 	padding-bottom: 1%;
-
+	
 	text-decoration: none;
 }
 #nuevo:hover{
@@ -60,12 +60,12 @@ color: rgb(0, 0, 0);
 	padding-left: 2%;
 }
 #sesion:hover{
-
+	
 	color: black;
 }
 
 #navbarDropdown:hover{
-
+	
 	background-color: #fff;
 }
 /* Barra navegaciòn */
@@ -91,11 +91,8 @@ nav.navbar {
 
 /* tarjetas */
 
-
-
 .card-product {
 	background: rgb(0, 0, 0);
-
 }
 .card-product .img-wrap {
 	border-radius: 10px 10px 0 0;
@@ -104,7 +101,6 @@ nav.navbar {
 	height: 200px;
 	text-align: center;
 	background-color: white;
-
 }
 .card-product .img-wrap img {
 	max-height: 100%;
@@ -114,11 +110,11 @@ nav.navbar {
 .card-product .info-wrap {
 	overflow: hidden;
 	padding: 20px;
-	/* border-top: 1px solid; */
+	border-top: 1px solid;
 }
 .card-product .bottom-wrap {
 	padding: 20px;
-	/* border-top: 1px solid rgb(27, 46, 212); */
+	border-top: 1px solid rgb(27, 46, 212);
 }
 
 .label-rating {
@@ -145,10 +141,7 @@ nav.navbar {
 .bg-secondary {
 	background-color: #000000 !important;
 }
-h4.title {
-	text-shadow: 0.5px 0 0 #000, -0.5px 0 0 #000, 0 0.5px 0 #000, 0 -0.5px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-	color: black;
-}
+
 /* Footer */
 
 .page-footer {
@@ -163,12 +156,10 @@ h4.title {
 		/* text-decoration: none; */
 }
 
+/* article {
+       max-width: 65%;
+/* } */ /* comente este estilo porque me estaba rompiendo el footer en myaccount.html */
 
-
-
-
-
-/* Carousel */
 #carouselExampleCaptions .carousel-inner img {
 	max-width: 100%;
 	height: 79vh;

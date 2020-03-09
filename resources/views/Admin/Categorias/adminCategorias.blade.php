@@ -12,7 +12,7 @@
                 <th>id</th>
                 <th>Categoria</th>
                 <th colspan="2">
-                    <a href="/formAgregarCategoria" class="btn btn-dark">Agregar</a>
+                    <a href="/formAgregarCategoria" class="btn btn-success">Agregar</a>
                 </th>
             </tr>
             </thead>

@@ -45,6 +45,7 @@ Route::post('/eliminarProducto', 'ProductosController@destroy')->middleware('Adm
 ############## VISTA PRODUCTOS ###################
 
 Route::get('/Productos/{marca?}/{categoria?}', 'ProductosController@show');
+Route::get('Producto/{id}', 'ProductosController@perfilProducto');
 
 
 /*USER*/
@@ -54,3 +55,4 @@ Route::get('/Perfil', 'indexController@Perfil')->name('Perfil')->Middleware('aut
 Route::get('/bienvenidos', function (){
     return view('/Users/pagRegistro');})->Middleware('auth');
 Route::get('/Contacto', 'indexController@Contacto')->name('Contacto');
+

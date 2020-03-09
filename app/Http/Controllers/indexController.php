@@ -9,8 +9,9 @@ use App\Producto;
 class indexController extends Controller
 {
     public function Home(){
+        session(['color'=>'marron']);
       $categorias = new Categoria;
-        $marcas = Marca::paginate(3);
+        $marcas = Marca::paginate(5);
         $productos = Producto::all();
         return view('/layout/index',['marcas' =>$marcas,
         'categorias'=> $categorias,
