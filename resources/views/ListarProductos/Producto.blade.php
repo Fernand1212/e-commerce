@@ -49,7 +49,7 @@
      <ul>
        <a href=""  style="width:10em" class="btn btn-warning float-right">Comprar</a>
 
-         </ul>
+     </ul>
 
             <h2>{{$producto->prdNombre}}</h2>
 

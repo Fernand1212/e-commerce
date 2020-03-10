@@ -1,5 +1,8 @@
+<?php
+$marcas = session('marcas');
+$categorias = session('categorias');
+?>
  <!-- NAV -->
-
  <div>
    <a href="/Contacto" id="aa"> Contactanos</a>
    <nav class=" navbar navbar-expand-lg navbar-light" id="inicio">
@@ -8,36 +11,22 @@
        <span class="navbar-toggler-icon"></span>
      </button>
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     <input type="hidden" name="idMarca">
-     <input type="hidden" name="idCat">
-       <ul class="navbar-nav mr-auto">
-         <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Adulto
-          </a>
+        <ul class="navbar-nav mr-auto">
+          @foreach($categorias as $categoria)
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{$categoria->catNombre}}
+           </a>
            <div class="dropdown-menu">
-             <a class="dropdown-item" href="/Productos/VANS">VANS</a>
-             <a class="dropdown-item" href="/Productos/NIKE">NIKE</a>
-             <a class="dropdown-item" href="/Productos/ADIDAS">ADIDAS</a>
+             @foreach ($marcas as $marca)
+             <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}/{{$categoria->idCategoria}}">{{$marca->mkNombre}}</a>
+             @endforeach
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="todos-productos.php">TODAS</a>
            </div>
-         </li>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-               Niños
-             </a>
-             <div class="dropdown-menu">
-               <a class="dropdown-item" href="#1">VANS</a>
-               <a class="dropdown-item" href="#2">NIKE</a>
-               <a class="dropdown-item" href="#3">ADIDAS</a>
-               <div class="dropdown-divider"></div>
-               <a class="dropdown-item" href="todos-productos.php">TODAS</a>
-             </div>
-           </li>
-       </ul>
+          </li>
+          @endforeach
+         </ul>
        <div style="padding=5%">
         <div class="widgets-wrap float-md-left ">
           <div class="widget-header  mr-3">
@@ -58,6 +47,7 @@
            <div class="widget-header  mr-3">
              <a href="{{route('Perfil')}}"><img src="/storage/{{Auth::user()->avatar}}" class="mr-3 icon icon-sm rounded-circle border"></a>
            </div>
+
            <div class="widget-header icontext">
              <div class="widget-header icontext">
              </div>

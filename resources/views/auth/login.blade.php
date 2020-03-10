@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<main>
+  <main>
     <div id="Todo2">
     <div id="Todo">
 <h1>Iniciar Sesion</h1>

@@ -2,6 +2,8 @@
 @section('content')
 <!-- Carousel -->
 @section('title')CASBUSAGI @endsection
+
+<!-- Carousel -->
 <div class="container-fluid bd-example pt-2">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
