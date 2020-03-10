@@ -35,10 +35,10 @@
           <br>
           <p id="parra" c">${{$producto->prdPrecio}}</p>
     </a>
-
     </div>
         </div>
       </div>
+
 
       @endforeach
 
@@ -46,7 +46,7 @@
 
 </div>
 </div>
-
+<br>
 
 
 
