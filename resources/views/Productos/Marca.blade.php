@@ -19,10 +19,11 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row" id="marco">
+
         @foreach( $productos as $producto)
+
     <div style=""
     class="col-6 col-lg-4 col-xl-3 mb-5">
     <a href="/Producto/{{$producto->idProducto}}">

@@ -21,11 +21,12 @@ $categorias = session('categorias');
              @foreach ($marcas as $marca)
              <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}/{{$categoria->idCategoria}}">{{$marca->mkNombre}}</a>
              @endforeach
+             @endforeach
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="todos-productos.php">TODAS</a>
            </div>
           </li>
-          @endforeach
+      
          </ul>
        <div style="padding=5%">
         <div class="widgets-wrap float-md-left ">

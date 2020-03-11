@@ -16,13 +16,9 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-        $productos = Producto::with('getMarca', 'getCategoria')->get();
+    {   $productos = Producto::with('getMarca', 'getCategoria')->get();
         return view('/Admin/Productos/adminProductos',
-            [
-                'productos'=>$productos
-            ]);
+            ['productos'=>$productos]);
     }
 
     /**
@@ -31,15 +27,11 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
-        $marcas = Marca::all();
+    {   $marcas = Marca::all();
         $categorias = Categoria::all();
         return view('Admin/Productos/formAgregarProducto',
-            [
-                'marcas'=>$marcas,
-                'categorias'=>$categorias
-            ]);
+            [ 'marcas'=>$marcas,
+              'categorias'=>$categorias ]);
     }
 
     /**
@@ -49,8 +41,7 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $req)
-    {
-    /* Validación */
+    {  /* Validación */
        $reglas = [
        'prdNombre' => 'string|unique:productos|required',
        'prdPrecio' => 'numeric|min:1000|required',
@@ -69,7 +60,6 @@ class ProductosController extends Controller
     $ruta = $req->file('prdImagen')->store('public');
     $nombreImagen = basename($ruta);
     /* Guardar */
-
        $producto = new Producto;
        $producto->prdNombre = $req['prdNombre'];
        $producto->prdPrecio = $req['prdPrecio'];
@@ -97,7 +87,11 @@ class ProductosController extends Controller
 
        $marca = Marca::find($idMarca);
        $categorias = Categoria::find($idCat);
-       $productos = Producto::where('marca',$idMarca)->orWhere('categoria',$idCat)->get();
+
+       if(isset($idCat)){
+       $productos = Producto::where('marca',$idMarca)->where('categoria',$idCat)->get();}
+       else {$productos = Producto::where('marca',$idMarca)->get();}
+
        return view('/Productos/Marca',[
         'marca' =>$marca,
         'categorias' => $categorias,
@@ -106,10 +100,6 @@ class ProductosController extends Controller
         ]
         );
     }
-
-
-
-
 
 
     /**
@@ -128,6 +118,14 @@ class ProductosController extends Controller
             'categorias' => $categorias ]);
     }
 
+
+
+
+
+
+
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -136,16 +134,13 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
-
-    {
-
-
+  {
         $regla = ['prdImagen' => 'required|file|image|mimes:jpg,jpeg,png,bmp,gif,svg'];
         $mensaje = ['image'    => 'Las extenciones admitidas son JPG, JPEG, PNG, BMP, GIF y SVG. <br> por favor vuelva a intentarlo'];
         //validacion
-$this->validate($request,$regla,$mensaje );
-$ruta = $request->file('prdImagen')->store('public');
-    $nombreImagen = basename($ruta);
+       $this->validate($request,$regla,$mensaje );
+       $ruta = $request->file('prdImagen')->store('public');
+      $nombreImagen = basename($ruta);
 
         $Producto = Producto::find($request->input('idProducto'));
         $Producto->prdNombre = $request['prdNombre'];
@@ -172,14 +167,14 @@ $ruta = $request->file('prdImagen')->store('public');
         $Producto = Producto::find($id);
         $Producto->delete();
         return redirect('/adminProductos')->with('mensaje', 'Producto ' .$Producto->prdNombre.' eliminada con éxito');
-
-
     }
 
+
+
+
+
     public function perfilProducto($id){
-
         $producto = Producto::find($id);
-
    return view('ListarProductos/Producto', ["producto"=> $producto]);
     }
 
