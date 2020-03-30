@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComprasProductoTable extends Migration
+class CreateCarritoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateComprasProductoTable extends Migration
      */
     public function up()
     {
-        Schema::create('compras_producto', function (Blueprint $table) {
+        Schema::create('carrito', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('producto_id');
             $table->foreign('producto_id')->references('idProducto')->on('productos')->onDelete('cascade')->onUpdate('cascade');
@@ -30,6 +30,6 @@ class CreateComprasProductoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compras_producto');
+        Schema::dropIfExists('carrito');
     }
 }

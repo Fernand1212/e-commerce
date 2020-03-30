@@ -8,13 +8,11 @@
 
 
 
-    <div  >
-        <div class="">
-      <div ">
 
 <p class="text-center">
-       <img id="portada"  src="/storage/{{$marca->mkImagen}}" alt="" style="max-width:20em; max-height: 20em; ">
-</p>
+      @if (isset($marca)) <img id="portada"  src="/storage/{{$marca->mkImagen}}" alt="" style="max-width:20em; max-height: 20em; ">
+    @endif
+    </p>
 
       </div>
     </div>
@@ -34,7 +32,7 @@
           <h5 class="card-title">{{$producto->prdNombre}}</h5>
           {{-- <p class="card-text" >{{$Productos->prdPresentacion}}</p> --}}
           <br>
-          <p id="parra" c">${{$producto->prdPrecio}}</p>
+          <p id="parra">${{$producto->prdPrecio}}</p>
     </a>
     </div>
         </div>
@@ -80,5 +78,5 @@
 
 </div>
 </div>
-
+<script src="js/prueba.js"></script>
 @endsection

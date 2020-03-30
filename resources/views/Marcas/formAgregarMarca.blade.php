@@ -14,7 +14,7 @@
                     <input type="text" name="mkNombre" class="form-control">
                     Eslogan:
                     <br>
-                    <input type="text" name="Eslogan" class="form-control">
+                    <input type="text" name="eslogan" class="form-control">
                     <br>
                     Imagen: <br>
             <input type="file" name="mkImagen" class="form-control">

@@ -33,14 +33,7 @@
                 >
                   Mi Perfil
                 </a>
-                <a
-                  class="card-account list-group-item"
-                  data-toggle="list"
-                  href="#guardados"
-                  role="tab"
-                >
-                  Guardados
-                </a>
+               
                 <a
                   class="card-account list-group-item"
                   data-toggle="list"
@@ -49,10 +42,7 @@
                 >
                   Mis Compras
                 </a>
-                <!-- <a class="list-group-item" href="#"> My misCompras</a>
-                <a class="list-group-item" href="#">Settings </a> -->
-                <!-- <a class="list-group-item" href="#"> My Selling Items </a>
-                     <a class="list-group-item" href="#"> Received orders </a> -->
+               
               </div>
             </aside>
             <!-- col.// -->
@@ -72,7 +62,7 @@
                           <strong> </strong> 
                           {{ Auth::user()->email }}
                           <br>
-                          <a href="#" class="btn-link"> Editar</a>
+                          <a href="" class="btn-link edit"> Editar</a>
                         </div>
                       </figure>
                      <hr />   <!--  borrar -->
@@ -130,25 +120,7 @@
                             <span>Mis Compras</span>
                           </div>
                         </figure>
-                        <figure class="card bg stats">
-                          <div class="p-3">
-                            <h5 class="card-title">5</h5>
-                            <span>Guardados</span>
-                          </div>
-                        </figure>
-                        <figure class="card bg stats">
-                          <div class="p-3">
-                            <h5 class="card-title">12</h5>
-                            <span>En espera</span>
-                          </div>
-                        </figure>
-                        <figure class="card bg stats">
-                          <div class="p-3">
-                            <h5 class="card-title">50</h5>
-                            <span>Items entregados</span>
-                          </div>
-                        </figure>
-                      </article>
+                       </article>
                     </div>  <!-- cierra card account linea88-->
                     <!-- card-body .// -->
                   </article>
@@ -156,120 +128,7 @@
 
 
                 </div>
-                <div class="tab-pane" id="guardados" role="tabpanel">
-                  <article class="card mb-3">
-                    <div class="card-account card-body">
-                  <div class="card-account card">
-<table class="table table-borderless table-shopping-cart">
-<thead class="text-muted">
-<tr class="small text-uppercase">
-  <th scope="col">Producto</th>
-  <th scope="col" width="120">Cantidad</th>
-  <th scope="col" width="120">Precio</th>
-  <th scope="col" class="text-right" width="200"> </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>
-		<figure class="itemside">
-			<div class="aside"><img src="img/images2.jfif" class="img-sm"></div>
-			<figcaption class="info">
-				<a href="#" class="title text-dark">Nombre del Producto</a>
-				<p class="text-muted small">Talle: XL, Color: Azul, <br> Marca: Gucci</p>
-			</figcaption>
-		</figure>
-	</td>
-	<td>
-		<select class="form-control">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-		</select>
-	</td>
-	<td>
-		<div class="price-wrap">
-			<var class="price">$1156.00</var>
-			<small class="text-muted"> $315.20 c/u </small>
-		</div> <!-- price-wrap .// -->
-	</td>
-	<td class="text-right">
-	<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-	<a href="" class="btn btn-light"> Eliminar</a>
-	</td>
-</tr>
-<tr>
-	<td>
-		<figure class="itemside">
-			<div class="aside"><img src="img/images2.jfif" class="img-sm"></div>
-			<figcaption class="info">
-				<a href="#" class="title text-dark">Nombre del Producto</a>
-				<p class="text-muted small">Talle: XL, Color: Azul, <br> Marca: Gucci</p>
-			</figcaption>
-		</figure>
-	</td>
-	<td>
-		<select class="form-control">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-		</select>
-	</td>
-	<td>
-		<div class="price-wrap">
-			<var class="price">$149.97</var>
-			<small class="text-muted"> $75.00 c/u </small>
-		</div> <!-- price-wrap .// -->
-	</td>
-	<td class="text-right">
-	<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-	<a href="" class="btn btn-light btn-round"> Eliminar</a>
-	</td>
-</tr>
-<tr>
-	<td>
-		<figure class="itemside">
-			<div class="aside"><img src="img/images.jfif" class="img-sm"></div>
-			<figcaption class="info">
-				<a href="#" class="title text-dark">Nombre del Producto</a>
-				<p class="small text-muted">Talle: XL, Color: Azul, <br> Marca: Gucci</p>
-			</figcaption>
-		</figure>
-	</td>
-	<td>
-		<select class="form-control">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-		</select>
-	</td>
-	<td>
-		<div class="price-wrap">
-			<var class="price">$98.00</var>
-			<small class="text-muted"> $578.00 c/u</small>
-		</div> <!-- price-wrap .// -->
-	</td>
-	<td class="text-right">
-		<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-		<a href="" class="btn btn-light btn-round"> Eliminar</a>
-	</td>
-</tr>
-</tbody>
-</table>
-<div class="card-body border-top">
-	<!-- <a href="#" class="btn btn-primary float-md-right"> Make Purchase <i class="fa fa-chevron-right"></i> </a> -->
-	<a href="index.html" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Seguir comprando </a>
-</div>
-</div> <!-- card.// -->
-<div class="alert alert-success mt-3">
-	<p class="icontext"><i class="icon text-success fa fa-truck"></i> Envios gratis entre 1-2 semanas</p>
-</div>
-                </div>
-                </article>
-
-                </div>
+                                                  
                 <div role="tabpanel" class="tab-pane cardigreen " id="misCompras">
                   <article class="card-mb3">
                     <div class="card-account card-body">

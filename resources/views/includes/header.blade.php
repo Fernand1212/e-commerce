@@ -22,12 +22,14 @@ $categorias = session('categorias');
              <a class="dropdown-item" href="/Productos/{{$marca->idMarca}}/{{$categoria->idCategoria}}">{{$marca->mkNombre}}</a>
              @endforeach
              @endforeach
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="todos-productos.php">TODAS</a>
-           </div>
-          </li>
-      
+             </li>
+         
          </ul>
+         <form class="form-inline my-2 my-lg-0" action="/Productos" method="GET">
+      <input class="form-control mr-sm-2" type="text" id="search"  id="buscador" name="search" placeholder="¿que buscas?">
+     
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
        <div style="padding=5%">
         <div class="widgets-wrap float-md-left ">
           <div class="widget-header  mr-3">
@@ -60,14 +62,14 @@ $categorias = session('categorias');
                 <a class="dropdown-item" href="{{route('Perfil')}}">
   {{ __('Mi Perfil') }}
 </a>
+  @if (Auth::user()->role=='admin')
+  <a class="dropdown-item" href="{{route('productos')}}">
+  {{ ('Panel Administrador') }} </a>
+  @endif
 <a class="dropdown-item" href="" onclick="event.preventDefault();
  document.getElementById('logout-form').submit();">
   {{ __('Salir') }}
 </a>
-@if (Auth::user()->role=='admin')
-<a class="dropdown-item" href="{{route('productos')}}">
-{{ ('Panel Administrativo') }} </a>
-@endif
 <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                    @csrf
                  </form>
@@ -76,3 +78,4 @@ $categorias = session('categorias');
              @endguest
    </nav>
  </div>
+<script src="js/prueba.js"></script>

@@ -45,8 +45,8 @@ Route::post('/eliminarProducto', 'ProductosController@destroy')->middleware('Adm
 ############## VISTA PRODUCTOS ###################
 
 Route::get('/Productos/{marca}/{categoria?}', 'ProductosController@show');
-Route::get('Producto/{id}', 'ProductosController@perfilProducto');
-
+Route::get('/Producto/{id}', 'ProductosController@perfilProducto');
+Route::get('/Productos', 'ProductosController@search');
 
 /*USER*/
 Auth::routes();
