@@ -8,7 +8,7 @@
     <div id="Todo2">
     <div id="Todo">
 <h1>Iniciar Sesion</h1>
-<form method="POST" action="{{route('login')}}">
+<form method="POST"  id="login" action="{{route('login')}}">
   {{csrf_field()}}
     <div class="form-group">
         <label for="email">Email</label>
@@ -38,4 +38,5 @@
 </small>
 </main>
 </div></div>
+<script src="js/login.js" charset="utf-8"></script>
 @endsection

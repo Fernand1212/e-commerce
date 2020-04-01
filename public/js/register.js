@@ -1,4 +1,3 @@
-
 fetch("https://restcountries.eu/rest/v2/all")
 .then(function(respuesta){
   return respuesta.json();
@@ -45,7 +44,8 @@ arrayElementos.forEach(function(elementos){
     var attribute = elementos.name;
     if (elementos.value == ""){
 event.preventDefault();
-      return this.value = prompt("El campo "+ attribute +" es olbigatorio, por favor completelo");
+      return elementos.value  = prompt("El campo "+ attribute +" es olbigatorio, por favor completelo");
+
        }})}
 
 

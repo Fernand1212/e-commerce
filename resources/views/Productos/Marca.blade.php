@@ -80,5 +80,5 @@
 
 </div>
 </div>
-
+<script src="js/buscador.js" charset="utf-8"></script>
 @endsection
