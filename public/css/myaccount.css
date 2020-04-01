@@ -1,3 +1,7 @@
+body{
+    background-image: url(../images/pared.jpg);
+    background-size: cover;
+}
 .section-pagetop {
   padding: 45px 0;
 }
@@ -190,11 +194,11 @@ figure {
 /* css USUARIO */
 
 .card-account {
-  background-color: #d5e8cb;
+  background-color: rgba(241, 236, 240, 0.596);
 }
 
 .fa-user:hover {
-  color: #d5e8cb;
+  color: rgba(241, 236, 240, 0.596);
 }
 
 .fa-shopping-cart:hover {

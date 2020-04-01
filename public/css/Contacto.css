@@ -1,20 +1,21 @@
-#body{
-    background-image: url(../img/pared.jpg);
+body{
+    background-image: url(../images/pared.jpg);
     background-size: cover;
 }
 #aa:hover{
     color: purple;
     font-weight: bold;
     transform: scale(1.1);
+
 }
 
 #aa{
     transition: transform .2s;
     color: white;
-    text-decoration: none; 
+    text-decoration: none;
     position: absolute;
-    position:fixed; 
-    bottom: 10px; 
+    position:fixed;
+    bottom: 10px;
     right: 10px;
     background-color: black;
     padding: 1%;
@@ -34,11 +35,11 @@
     width: 70%;
     height: 100%;
     margin-top: 1%;
-    margin-bottom: 10%; 
+    margin-bottom: 10%;
     padding-bottom: 1%;
     margin-left: 15%;
 }
-@media (max-width: 375px) { 
+@media (max-width: 375px) {
     #Todo{margin-left: 0% ;
         width: auto;
     }}
@@ -53,28 +54,26 @@ h1{
     color: white;
 }
 /* footer{
-    
+
     background-color: rgba(128, 128, 128, 0.904);
 } */
-img{
-    width: 30px;
-}
+
 #Redes{
     font-size: 20px;
     text-align: center;
-    
+
 }
 #Copy{
     text-align: left;
    padding-left: 5%;
 }
 @media (min-width: 200px) and (max-width: 767.98px) { #Todo2{
-    
+
     margin: 3%;
     width: auto;
     background-color:rgba(0, 0, 0, 0.795);
     color: white;
-  
-   
- 
-} } 
+
+
+
+} }

@@ -129,7 +129,7 @@
         </div>
         <div class="col-md-3 mb-3">
           <label for="avatar">Avatar</label>
-          <input type="file" name="avatar" class="" id="avatar" placeholder="Avatar" value="">
+          <input type="file" name="avatar" class="btn btn-outline-secondary" id="avatar" placeholder="Avatar" value="">
            @error('Avatar')
            <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>

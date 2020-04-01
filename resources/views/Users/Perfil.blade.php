@@ -2,12 +2,12 @@
     @extends('layout.main')
     @section('link')<script src="https://kit.fontawesome.com/67f61afa3e.js"
       crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="css/myaccount.css" />  
-      @endsection  
+      <link rel="stylesheet" href="css/myaccount.css" />
+      @endsection
     @section('title')Perfil de Usuario @endsection
     @section('content')
-    
- 
+
+
 
 
       <!--!ACA EMPIEZA MYACCOUNT.//-->
@@ -33,7 +33,7 @@
                 >
                   Mi Perfil
                 </a>
-               
+
                 <a
                   class="card-account list-group-item"
                   data-toggle="list"
@@ -42,7 +42,7 @@
                 >
                   Mis Compras
                 </a>
-               
+
               </div>
             </aside>
             <!-- col.// -->
@@ -59,10 +59,11 @@
                           />
                         </div>
                         <div class="text">
-                          <strong> </strong> 
+                          <strong> </strong>
                           {{ Auth::user()->email }}
                           <br>
-                          <a href="" class="btn-link edit"> Editar</a>
+
+                          <a href="" class="btn-link edit"><input type="hidden"> Editar</a>
                         </div>
                       </figure>
                      <hr />   <!--  borrar -->
@@ -78,34 +79,36 @@
                                     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Nueva Dirección</a>
                                 </div>
                             </div>
-                             <table class="table table-responsive">
-                                <thead>
-                                    <tr><th>Alias</th>
-                                    <th>Calles</th>
-                                    <th>Ciudad</th>
-                                                                        <!-- <th>State</th> -->
-                                    <th>País</th>
-                                    <th>Cód. Postal</th>
-                                    <th>Télefono</th>
-                                    <th>Acciones</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>{{ Auth::user()->alias }}</td>
-                                            <td>{{ Auth::user()->direccion }}</td>
-                                            <td>{{ Auth::user()->ciudad }}</td>
-                                                                                        <!-- <td></td> -->
-                                            <td>Argentina</td>
-                                            <td>{{ Auth::user()->postal }}</td>
-                                            <td>{{ Auth::user()->telefono }}</td>
+
+
+     <table class="table table-responsive">
+      <thead>
+       <tr><th>Alias</th>
+       <th>Calles</th>
+       <th>Ciudad</th>
+      <th>País</th>
+        <th>Cód. Postal</th>
+        <th>Télefono</th>
+        <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                     <td>{{ Auth::user()->alias }}</td>
+                     <td>{{ Auth::user()->direccion }}</td>
+                    <td>{{ Auth::user()->ciudad }}</td>
+
+                     <td>Argentina</td>
+                    <td>{{ Auth::user()->postal }}</td>
+                <td>{{ Auth::user()->telefono }}</td>
                                             <td>
-                                                <form method="post" action="https://shop.laracom.net/customer/1231/address/755" class="form-horizontal">
+<form method="post" action="" class="form-horizontal">
                                                     <div class="btn-group">
-                                                        <input type="hidden" name="_method" value="delete">
-                                                        <input type="hidden" name="_token" value="HDtXA86dfpZzb97wkjnrjjp50OZFw9SoK7tmbFIP">
-                                                        <a href="" class="btn btn-primary"> <i class="fa fa-pencil"></i> Editar</a>
-                                                        <button onclick="return confirmar('Are you sure?')" type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i> Eliminar</button>
+  <input type="hidden" name="_method" value="delete">
+     <input type="hidden" name="_token" value="HDtXA86dfpZzb97wkjnrjjp50OZFw9SoK7tmbFIP">
+        <a href="" class="btn btn-primary"> <i class="fa fa-pencil"></i> Editar</a>
+
+      <button onclick="return confirmar('Are you sure?')" type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i> Eliminar</button>
                                                     </div>
                                                 </form>
                                             </td>
@@ -113,14 +116,14 @@
                                 </tbody>
                             </table>
                 </div>
-                      <article class="card-group">
+                      {{-- <article class="card-group">
                         <figure class="card bg stats">
                           <div class="p-3">
                             <h5 class="card-title">38</h5>
                             <span>Mis Compras</span>
                           </div>
                         </figure>
-                       </article>
+                       </article> --}}
                     </div>  <!-- cierra card account linea88-->
                     <!-- card-body .// -->
                   </article>
@@ -128,7 +131,7 @@
 
 
                 </div>
-                                                  
+
                 <div role="tabpanel" class="tab-pane cardigreen " id="misCompras">
                   <article class="card-mb3">
                     <div class="card-account card-body">

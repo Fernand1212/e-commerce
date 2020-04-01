@@ -14,7 +14,7 @@ class userController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -75,7 +75,7 @@ class userController extends Controller
          $this->validate($request,$regla,$mensaje );
          $ruta = $request->file('avatar')->store('public');
         $nombreImagen = basename($ruta);
-  
+
           $Producto = User::find($request->input('id'));
           $Producto->name = $request['name'];
           $Producto->prdPrecio = $request['prdPrecio'];
@@ -87,7 +87,7 @@ class userController extends Controller
           $Producto->save();
           return redirect('/adminProductos')
               ->with('mensaje', 'Producto '.$Producto->nombre.' modificada con éxito');
-  
+
       }
 
     /**
@@ -96,8 +96,9 @@ class userController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    public function destroy()
+
+
+
+
 }
