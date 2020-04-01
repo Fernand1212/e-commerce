@@ -35,28 +35,32 @@ var customSwitch1 = document.querySelector('#customSwitch1');
 var invalidCheck2 = document.querySelector('#invalidCheck2');
 var terminos = document.querySelector('#Terminos');
 
-var arrayElementos = Array.from(elementosFormulario);
+
+
+
+formularioRegistro.onsubmit = function(event){
+let arrayElementos = Array.from(elementosFormulario);
+arrayElementos.splice(14, 5)
 arrayElementos.forEach(function(elementos){
-  elementos.addEventListener("blur",function(){
-    var attribute = this.name;
-    if (this.value == ""){
-      return this.value = prompt("El "+ attribute +" es olbigatorio, por favor completelo");
-       }
+    var attribute = elementos.name;
+    if (elementos.value == ""){
+event.preventDefault();
+      return this.value = prompt("El campo "+ attribute +" es olbigatorio, por favor completelo");
+       }})}
 
-}) })
 
-console.log()
-var onchange = function(campo){
+
+var onchange = function(campo, caracteres){
 campo.onchange = function(){
-var attribute = this.name;
-  if (this.value.length < 3){
-  return alert("El " +attribute+ " debe tener minimo 3 caracteres")
+var attribute = campo.name;
+  if (campo.value.length < caracteres){
+  return alert("El campo " + attribute + " debe tener minimo " +caracteres + " caracteres")
 } }}
 
-onchange(nombre)
-onchange(apellido)
-onchange(barrio)
-onchange(postal)
-onchange(alias)
-onchange(telefono)
-onchange(ciudad)
+onchange(nombre, 3)
+onchange(apellido, 3)
+onchange(barrio, 4)
+onchange(postal, 4)
+onchange(alias, 8)
+onchange(telefono, 10)
+onchange(ciudad, 6)

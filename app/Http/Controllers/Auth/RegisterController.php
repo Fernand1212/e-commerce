@@ -90,6 +90,7 @@ protected function validator(array $data)
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'apellido'  => $data['apellido'],
+            'pais'     => $data['pais'],
             'ciudad'     => $data['ciudad'],
             'barrio'   => $data['barrio'],
             'postal'   => $data['postal'],

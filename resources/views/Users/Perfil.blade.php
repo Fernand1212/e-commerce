@@ -2,12 +2,12 @@
     @extends('layout.main')
     @section('link')<script src="https://kit.fontawesome.com/67f61afa3e.js"
       crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="css/myaccount.css" />  
-      @endsection  
+      <link rel="stylesheet" href="css/myaccount.css" />
+      @endsection
     @section('title')Perfil de Usuario @endsection
     @section('content')
-    
- 
+
+
 
 
       <!--!ACA EMPIEZA MYACCOUNT.//-->
@@ -33,7 +33,7 @@
                 >
                   Mi Perfil
                 </a>
-               
+
                 <a
                   class="card-account list-group-item"
                   data-toggle="list"
@@ -42,7 +42,7 @@
                 >
                   Mis Compras
                 </a>
-               
+
               </div>
             </aside>
             <!-- col.// -->
@@ -59,7 +59,7 @@
                           />
                         </div>
                         <div class="text">
-                          <strong> </strong> 
+                          <strong> </strong>
                           {{ Auth::user()->email }}
                           <br>
                           <a href="" class="btn-link edit"> Editar</a>
@@ -96,7 +96,7 @@
                                             <td>{{ Auth::user()->direccion }}</td>
                                             <td>{{ Auth::user()->ciudad }}</td>
                                                                                         <!-- <td></td> -->
-                                            <td>Argentina</td>
+                                            <td>{{ Auth::user()->pais}}</td>
                                             <td>{{ Auth::user()->postal }}</td>
                                             <td>{{ Auth::user()->telefono }}</td>
                                             <td>
@@ -128,7 +128,7 @@
 
 
                 </div>
-                                                  
+
                 <div role="tabpanel" class="tab-pane cardigreen " id="misCompras">
                   <article class="card-mb3">
                     <div class="card-account card-body">
