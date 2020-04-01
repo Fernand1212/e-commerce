@@ -30,6 +30,7 @@ $categorias = session('categorias');
          <form style="" class=" form-inline my-2 my-lg-0" action="/Productos" method="GET">
       <input class="form-control mr-sm-2" type="text" id="search"  id="buscador" name="search" placeholder="¿Que buscas?">
       <button style="" class="btn btn-outline-danger my-2 my-sm-0 float-right " type="submit">Buscar</button>
+
     </form>
         </div>
 
@@ -87,3 +88,4 @@ $categorias = session('categorias');
    </nav>
  </div>
 <script src="js/prueba.js"></script>
+

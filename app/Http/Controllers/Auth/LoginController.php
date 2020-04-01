@@ -33,7 +33,7 @@ public function __construct()
 
   $datosUsuario =  $this->validate(request(),$reglas, $mensajes);
 if(Auth::attempt($datosUsuario)){
-    return redirect('/bienvenidos');
+    return redirect('/');
 } else {
   return back()->withErrors(['email' => 'El email no se encuentra registrado'])
   ->withInput(request(['email']));

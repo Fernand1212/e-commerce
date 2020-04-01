@@ -30,10 +30,10 @@
                     <tr>
                     <td>{{$marca->idMarca}}</td>
                     <td>{{$marca->mkNombre}}</td>
-                    <td>{{$marca->Eslogans}}</td>
+                    <td>{{$marca->Eslogan}}</td>
                     <td><img src="/storage/{{$marca->mkImagen}}" height="100" width="120"> </td>
                     <td>
-                        <a href="/formModificarMarca/{{$marca->idMarca}}" class="btn btn-outline-secondary">
+                        <a href="/formModificarMarca/{{$marca->idMarca}}" class="btn btn-dark">
                             Modificar
                         </a>
                     </td>
