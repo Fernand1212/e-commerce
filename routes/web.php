@@ -56,3 +56,7 @@ Route::get('/bienvenidos', function (){
     return view('/Users/pagRegistro');})->Middleware('auth');
 Route::get('/Contacto', 'indexController@Contacto')->name('Contacto');
 Route::get('/Carrito', 'carritoController@index')->name('carrito');;
+
+
+//usuario
+

@@ -25,10 +25,10 @@ $categorias = session('categorias');
              </li>
 
          </ul>
-         <form class="form-inline my-2 my-lg-0" action="/Productos" method="GET">
-      <input class="form-control mr-sm-2" type="text" id="search" name="search" placeholder="¿que buscas?">
+         <form class="form-inline my-2 my-lg-0" action="/Productos" method="GET" style="Margin-right:5%">
+      <input class="form-control mr-sm-2" type="text" id="search"  id="buscador" name="search" placeholder="¿Que buscas?">
 
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" >Buscar</button>
     </form>
        <div style="padding=5%">
         <div class="widgets-wrap float-md-left ">
@@ -47,14 +47,14 @@ $categorias = session('categorias');
             </div>
           </div> @endif
            @else
-           <div class="widget-header  mr-3">
+           <div class="widget-header  mr-3" style="margin-bottom: 5%;">
              <a href="{{route('Perfil')}}"><img src="/storage/{{Auth::user()->avatar}}" class="mr-3 icon icon-sm rounded-circle border"></a>
            </div>
 
            <div class="widget-header icontext">
              <div class="widget-header icontext">
              </div>
-             <ul class="nav-item dropdown">
+             <ul class="nav-item dropdown" style="padding:0%;">
                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                  {{ Auth::user()->alias }} <span class="caret"></span>
                </a>
