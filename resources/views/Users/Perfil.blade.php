@@ -80,27 +80,28 @@
                                 </div>
                             </div>
 
+                             <table class="table table-responsive">
+                                <thead>
+                                    <tr><th>Alias</th>
+                                    <th>Calles</th>
+                                    <th>Ciudad</th>
+                                                                        <!-- <th>State</th> -->
+                                    <th>País</th>
+                                    <th>Cód. Postal</th>
+                                    <th>Télefono</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>{{ Auth::user()->alias }}</td>
+                                            <td>{{ Auth::user()->direccion }}</td>
+                                            <td>{{ Auth::user()->ciudad }}</td>
+                                                                                        <!-- <td></td> -->
+                                            <td>{{ Auth::user()->pais}}</td>
+                                            <td>{{ Auth::user()->postal }}</td>
+                                            <td>{{ Auth::user()->telefono }}</td>
 
-     <table class="table table-responsive">
-      <thead>
-       <tr><th>Alias</th>
-       <th>Calles</th>
-       <th>Ciudad</th>
-      <th>País</th>
-        <th>Cód. Postal</th>
-        <th>Télefono</th>
-        <th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-                     <td>{{ Auth::user()->alias }}</td>
-                     <td>{{ Auth::user()->direccion }}</td>
-                    <td>{{ Auth::user()->ciudad }}</td>
-
-                     <td>Argentina</td>
-                    <td>{{ Auth::user()->postal }}</td>
-                <td>{{ Auth::user()->telefono }}</td>
                                             <td>
 <form method="post" action="" class="form-horizontal">
                                                     <div class="btn-group">

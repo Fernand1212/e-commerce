@@ -168,5 +168,5 @@
 
 
   </div>
-  <script src="js/prueba.js" charset="utf-8"></script>
+  <script src="js/register.js" charset="utf-8"></script>
 @endsection
