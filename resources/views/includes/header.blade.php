@@ -34,7 +34,7 @@ $categorias = session('categorias');
         <div class="widgets-wrap float-md-left ">
           <div class="widget-header  mr-3">
             <a href="/Carrito" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-            <span class=" badge-pill badge-danger notify">0</span>
+            {{-- <span class=" badge-pill badge-danger notify">0</span> --}}
           </div>
         </div>
            @guest

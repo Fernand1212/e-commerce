@@ -35,7 +35,7 @@ style="padding:5%">
 
                    <button class="btn btn-warning">Comprar</button>
                    <button class="btn btn-outline-dark btn-sm">
-                       <a href="/Carrito" style="Color:black; text-decoration:none;">Agregar al carrito</a>
+                       <a href="/Producto/{{$producto->idProducto}}" style="Color:black; text-decoration:none;">Agregar al carrito</a>
                    </button>
         <div class="hidden-sm-down">
      <div class="product-sku"></div>

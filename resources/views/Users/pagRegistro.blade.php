@@ -5,7 +5,7 @@
 @section('content')
 <div class="mx-5">
 <div class="jumbotron" style=" background-color:rgba(0, 0, 0, 0.795);" >
-  <h1 class="display-4">Cuenta creada exitosamente!</h1>
+  <h1 class="display-4">Inicio exitoso!</h1>
   <h2> Bienvenido {{auth()->user()->name}} </h2>
   <hr class="my-4">
    <a class="btn btn-danger lg" id="Boton" href="{{route('Perfil')}} " role="button">Mi Usuario</a>

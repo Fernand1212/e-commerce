@@ -103,7 +103,7 @@
                                             <td>{{ Auth::user()->telefono }}</td>
 
                                             <td>
-<form method="post" action="" class="form-horizontal">
+<form method="" action="" class="form-horizontal">
                                                     <div class="btn-group">
   <input type="hidden" name="_method" value="delete">
      <input type="hidden" name="_token" value="HDtXA86dfpZzb97wkjnrjjp50OZFw9SoK7tmbFIP">

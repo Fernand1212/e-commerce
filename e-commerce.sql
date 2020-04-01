@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-03-2020 a las 00:17:03
+-- Tiempo de generación: 01-04-2020 a las 19:57:19
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -21,6 +21,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `e-commerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `producto_id` bigint(20) UNSIGNED NOT NULL,
+  `usuario_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -104,7 +118,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2020_02_29_182717_create_marcas_table', 1),
 (10, '2020_02_29_184137_create_categorias_table', 1),
 (11, '2021_02_29_165707_create_productos_table', 1),
-(12, '2022_03_01_195011_create_compras_producto_table', 1);
+(12, '2022_03_01_195011_create_compras_producto_table', 1),
+(13, '2020_03_29_090239_create_carrito_table', 2);
 
 -- --------------------------------------------------------
 
@@ -142,10 +157,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idProducto`, `prdNombre`, `prdPrecio`, `marca`, `categoria`, `prdPresentacion`, `prdStock`, `prdImagen`, `created_at`, `updated_at`) VALUES
-(2, 'Nike Air Max 97', 4500, 2, 1, 'qwertuiohasfhmklkytresasfbnmk', 100, 'qEzzsh6GKmLkGyUbjB36LrZBKRThI0XaMQ7fa0D1.jpeg', '2020-03-09 21:47:41', '2020-03-09 21:47:41'),
+(2, 'Nike Air Max 97', 4500, 2, 1, 'qwertuiohasfhmklkytresasfbnmk', 100, '4PQcYwRTUgBVcfV7XmwERDhItBgaSuqV5UaQdQnu.jpeg', '2020-03-09 21:47:41', '2020-04-01 19:41:44'),
 (3, 'Nike Air Max Oketo', 4500, 2, 2, 'olkjhgfdsadrghjkllñlkjh', 50, '2W5eD2bUtwoln08Nlsu3xySZZXM8tJEUYfGXKOcD.jpeg', '2020-03-09 21:50:11', '2020-03-09 21:50:11'),
-(4, 'Adidas New', 3000, 3, 2, 'lkhgfcxszaaxsdfhujilkjmnbvcdxsf', 70, '6O0RbYAkX1S8rP6iOYPqPnSIS71fOz5Tkoeugk9u.jpeg', '2020-03-10 01:09:36', '2020-03-10 01:09:36'),
-(5, 'Adidas No New', 5000, 3, 1, 'ehiugreuhugrerthjgresrgjbhgreth', 30, '3zk0Q2bHJbf4KWmpy3Mi0z05pLvVJvxKd9jcglKN.jpeg', '2020-03-10 01:21:10', '2020-03-10 01:21:10');
+(4, 'Adidas New', 3000, 3, 2, 'lkhgfcxszaaxsdfhujilkjmnbvcdxsf', 70, 'LNKHuT7LMmhQQadLjKQqak5BWLCK1S84qL2kKSWs.jpeg', '2020-03-10 01:09:36', '2020-04-01 19:43:51'),
+(5, 'Adidas No New', 5000, 3, 1, 'ehiugreuhugrerthjgresrgjbhgreth', 30, '3zk0Q2bHJbf4KWmpy3Mi0z05pLvVJvxKd9jcglKN.jpeg', '2020-03-10 01:21:10', '2020-03-10 01:21:10'),
+(10, 'Chuck Taylor All Star HI', 6545, 5, 2, 'hfdazsdrfyujkigyfdseawdrtyjjh', 2333, 'eIVisJZMYACdiZ8GdyMHTWarVUj8qkCGBhtexgDj.jpeg', '2020-03-31 21:24:28', '2020-04-01 19:40:46'),
+(11, 'Chuck Taylor All Star Lift', 6000, 5, 2, 'sdfhmjhfawserethnbvbv', 100, 'ZLhBDFZc18VuyhHhZClxmaC6b7SIsdZYibWs6Cei.jpeg', '2020-04-01 19:42:17', '2020-04-01 19:42:17'),
+(12, 'Vans New', 4000, 4, 1, 'khfgdafgtjkhjnfsd5rtwewsxc', 202, 'JkQuILqTYSkxJcLiGni9wrmGwHg2raOSnsc0rHWD.jpeg', '2020-04-01 19:44:46', '2020-04-01 19:46:31'),
+(13, 'Vans No New', 5500, 4, 2, 'yhtrfedsdvfgthjukilop', 200, 'QC2E1MJLFoOTpEboT9THY4Wzr68N1O37Asb0BeK1.jpeg', '2020-04-01 19:45:33', '2020-04-01 19:45:33');
 
 -- --------------------------------------------------------
 
@@ -185,6 +204,14 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ap
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `carrito_producto_id_foreign` (`producto_id`),
+  ADD KEY `carrito_usuario_id_foreign` (`usuario_id`);
 
 --
 -- Indices de la tabla `categorias`
@@ -238,6 +265,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
@@ -259,13 +292,13 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idProducto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idProducto` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -276,6 +309,13 @@ ALTER TABLE `users`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD CONSTRAINT `carrito_producto_id_foreign` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`idProducto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `carrito_usuario_id_foreign` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `compras_producto`

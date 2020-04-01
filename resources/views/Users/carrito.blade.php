@@ -5,14 +5,13 @@
 @section('title')Mi Carrito @endsection
 @section('content')
 
-<body>
-	<a href="Contacto.html" id="aa"> Contactanos</a>
+<body style=>
 	<!-- Header -->
 
 	<!--!ACA EMPIEZA CARRITO.//-->
 	<section class="section-pagetop bg">
 		<div class="">
-			<h2 class="title-page">Mi Carrito</h2>
+			<h1 class="mx-5 mr-3 text-uppercase font-weight-bold" style="padding:2%" >Mi Carrito</h2>
 		</div>
 
 		<!-- container //  -->
@@ -29,8 +28,8 @@
 
 						<div class="tab-pane" id="guardados" role="tabpanel">
 							<article class="card mb-3">
-								<div class="card-body">
-									<div class="card">
+								<div class="card-body" style="background-color: rgb(108, 117, 125);">
+									<div class="card" style="background-color:rgba(255, 255, 255, 0.582); color:black;">
 										<table class="table table-borderless table-shopping-cart ">
 											<thead class="text-muted">
 												<tr class="small text-uppercase">
@@ -43,95 +42,17 @@
 											<tbody>
 												<tr>
 													<td>
-														<figure class="itemside">
-															<div class="aside"><img src="img/images2.jfif" class="img-sm "></div>
-															<figcaption class="info">
-																<a href="#" class="title text-dark">Nombre del Producto</a>
-																<p class="text-muted small">Talle: XL, Color: Azul, <br> Marca: Gucci</p>
-															</figcaption>
-														</figure>
-													</td>
-													<td>
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-														</select>
-													</td>
-													<td>
-														<div class="price-wrap">
-															<var class="price">$1156.00</var>
-															<small class="text-muted"> $315.20 c/u </small>
-														</div> <!-- price-wrap .// -->
-													</td>
-													<td class="text-right">
-														<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-														<a href="" class="btn btn-light"> Eliminar</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<figure class="itemside">
-															<div class="aside"><img src="img/images2.jfif" class="img-sm"></div>
-															<figcaption class="info">
-																<a href="#" class="title text-dark">Nombre del Producto</a>
-																<p class="text-muted small">Talle: XL, Color: Azul, <br> Marca: Gucci</p>
-															</figcaption>
-														</figure>
-													</td>
-													<td>
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-														</select>
-													</td>
-													<td>
-														<div class="price-wrap">
-															<var class="price">$149.97</var>
-															<small class="text-muted"> $75.00 c/u </small>
-														</div> <!-- price-wrap .// -->
-													</td>
-													<td class="text-right">
-														<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-														<a href="" class="btn btn-light btn-round"> Eliminar</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<figure class="itemside">
-															<div class="aside"><img src="img/images.jfif" class="img-sm"></div>
-															<figcaption class="info">
-																<a href="#" class="title text-dark">Nombre del Producto</a>
-																<p class="small text-muted">Talle: XL, Color: Azul, <br> Marca: Gucci</p>
-															</figcaption>
-														</figure>
-													</td>
-													<td>
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-														</select>
-													</td>
-													<td>
-														<div class="price-wrap">
-															<var class="price">$98.00</var>
-															<small class="text-muted"> $578.00 c/u</small>
-														</div> <!-- price-wrap .// -->
-													</td>
-													<td class="text-right">
-														<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-														<a href="" class="btn btn-light btn-round"> Eliminar</a>
-													</td>
+
+
+
+
 												</tr>
 											</tbody>
 										</table>
 										<div class="card-body border-top">
-											<a href="#" class="btn btn-primary float-md-right"> Comprar <i class="fa fa-chevron-right"></i> </a>
-											<a href="index.html" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Seguir comprando </a>
+
+                                            <a href="/" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Seguir comprando </a>
+                                            <a href="#" class="btn btn-primary float-md-right"> Comprar <i class="fa fa-chevron-right"></i> </a>
 										</div>
 									</div> <!-- card.// -->
 									<div class="alert alert-success mt-3">
@@ -148,9 +69,9 @@
 					</main>
 					<aside class="col-md-3">
 						<div class="card mb-3">
-							<div class="card-body">
-								<form>
-									<div class="form-group">
+                            <div style="background-color: rgb(108, 117, 125);" class="card-body" >
+								<form  >
+									<div class="form-group"style="padding:5%; background-color:rgba(255, 255, 255, 0.582);">
 										<label>Tenes un Codigo de Descuento?</label>
 										<div class="input-group">
 											<input type="text" class="form-control" name="" placeholder="Codigo">
@@ -162,8 +83,8 @@
 								</form>
 							</div> <!-- card-body.// -->
 						</div> <!-- card .// -->
-						<div class="card">
-							<div class="card-body">
+						{{-- <div class="card" style="padding:5%;background-color: rgb(108, 117, 125);">
+							<div class="card-body" style=" background-color:rgba(255, 255, 255, 0.582);">
 								<dl class="dlist-align">
 									<dt>Precio Total:</dt>
 									<dd class="text-right">$ 568</dd>
@@ -178,8 +99,8 @@
 								</dl>
 								<hr>
 								<p class="text-center mb-3">
-									<img src="img/payments.png" height="26">
-								</p>
+
+								</p> --}}
 
 							</div> <!-- card-body.// -->
 						</div> <!-- card .// -->
