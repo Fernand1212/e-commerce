@@ -4,7 +4,7 @@
 @section('content')
 <div id="Todo">
 
-    <form method="post"  action="{{ route('register') }}"  enctype="multipart/form-data">
+    <form method="post" id="registro" action="{{ route('register') }}"  enctype="multipart/form-data">
     @csrf
       <div id="titulo">Crear Cuenta</div>
       <div class="form-row">
@@ -48,7 +48,7 @@
         <div class="col-md-2 mb-3">
           <label for="password_confirmation">Repetir Contraseña</label>
           <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Contraseña" aria-describedby="inputGroupPrepend2" value="">
-           
+
 
         </div>
       </div>
@@ -57,7 +57,7 @@
         <div class="col-md-2 mb-3">
           <label for="pais">Pais </label>
           <select name="pais" id="country_id" class="form-control @error('pais') is-invalid @enderror select2 select2-hidden-accessible" data-select2-id="country_id" tabindex="-1" aria-hidden="true">
-            <option selected="selected" value="ARGENTINA" data-select2-id="12">ARGENTINA</option>
+
 
 
 
@@ -168,4 +168,5 @@
 
 
   </div>
+  <script src="js/prueba.js" charset="utf-8"></script>
 @endsection
