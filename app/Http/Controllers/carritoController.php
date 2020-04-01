@@ -13,7 +13,7 @@ class carritoController extends Controller
      */
     public function index()
     {
-        //
+        return view('Users/carrito');
     }
 
     /**

@@ -33,7 +33,7 @@ $categorias = session('categorias');
        <div style="padding=5%">
         <div class="widgets-wrap float-md-left ">
           <div class="widget-header  mr-3">
-            <a href="carrito.php" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+            <a href="/Carrito" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
             <span class=" badge-pill badge-danger notify">0</span>
           </div>
         </div>
