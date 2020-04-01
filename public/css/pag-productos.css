@@ -7,22 +7,23 @@ a:hover{
 a{
 
     text-decoration: none;
-    color: black;
+    color: rgb(182, 178, 178);
 }
  #tar:hover{
     transform: scale(1.1);
 }
+h5{
+    font-size: 1.3rem;
+}
 
-/*cORRREGIR*/
+
 #tar{
-     max-width:80em;
-     min-height:22em;
+border: hidden;
     transition: 1.1s;
-position: ;
     padding: 3%;
-    float: left;
-    background-color:rgb(222, 220, 230);
+    margin: 3%;
 
+    background-color: rgb(88, 88, 88);
 }
 #tarbody{
 overflow: hidden;
@@ -36,15 +37,13 @@ overflow: hidden;
     background-color: rgba(3, 3, 3, 0.425);
     text-align: center;
     color: white;
+    margin-left: 2%;
     font-size: 20px;
-    bottom: 0px;
-    left: 35%;
     padding-left: 5%;
     padding-right: 5%;
 }
 
 #marco {
     overflow: hidden;
-padding: 3em;
-    background-color: rgba(3, 3, 3, 0.171);
+    background-color: rgb(88, 88, 88);
 }

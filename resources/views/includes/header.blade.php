@@ -3,14 +3,14 @@ $marcas = session('marcas');
 $categorias = session('categorias');
 ?>
  <!-- NAV -->
- <div>
+ <div >
    <a href="/Contacto" id="aa"> Contactanos</a>
    <nav class=" navbar navbar-expand-lg navbar-light" id="inicio">
      <h4 class=" mr-3 text-uppercase font-weight-bold"><a href="/" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
-     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index:300;  background-color: rgba(255, 255, 255, 0.699);">
         <ul class="navbar-nav mr-auto">
           @foreach($categorias as $categoria)
           <li class="nav-item dropdown">
@@ -23,27 +23,35 @@ $categorias = session('categorias');
              @endforeach
              @endforeach
              </li>
-         
+
          </ul>
-         <form class="form-inline my-2 my-lg-0" action="/Productos" method="GET">
-      <input class="form-control mr-sm-2" type="text" id="search"  id="buscador" name="search" placeholder="¿que buscas?">
-     
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+         {{-- Buscador --}}
+         <div style="margin-right:5%" class="">
+         <form style="" class=" form-inline my-2 my-lg-0" action="/Productos" method="GET">
+      <input class="form-control mr-sm-2" type="text" id="search"  id="buscador" name="search" placeholder="¿Que buscas?">
+      <button style="" class="btn btn-outline-danger my-2 my-sm-0 float-right " type="submit">Buscar</button>
     </form>
-       <div style="padding=5%">
+        </div>
+
+
         <div class="widgets-wrap float-md-left ">
-          <div class="widget-header  mr-3">
+          <div style="margin-top=5%" class="widget-header  mr-3">
             <a href="carrito.php" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
             <span class=" badge-pill badge-danger notify">0</span>
           </div>
         </div>
            @guest
 
-           <div class="collapse navbar-collapse float-md-right" style="margin-top:5%" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-              <a class=" mr-2" id="sesion" href="login" role="button">Iniciar Sesión</a>
+           <div
+           {{-- class="collapse navbar-collapse float-md-right" --}}
+           style="mx-auto"
+           id="navbarNavAltMarkup">
+
+            <div class="navbar-nav ml-auto" style="display: unset;">
+              <a class=" mr-2" id="sesion" style=" margin-bottom:10%;" href="login" role="button">Iniciar Sesión
+            </a>
               @if (Route::has('register'))
-              |<a class="  mr-2" style="padding-left: 2%;" id="sesion" href="register" role="button">Registrarme</a>
+             <a class="  mr-2"  id="sesion" style="margin-top:30%;" href="register" role="button">  Registrarme</a>
             </div>
           </div> @endif
            @else

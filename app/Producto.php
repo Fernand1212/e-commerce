@@ -18,7 +18,10 @@ protected $primaryKey = 'idProducto';
     {
         return $this->belongsTo('App\Categoria', 'categoria', 'idCategoria');
     }
-
+// public function archivo()
+// {
+//     return $this->hasMany('Archivo','idProducto');
+// }
 
 
 

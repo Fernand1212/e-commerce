@@ -119,8 +119,8 @@ class ProductosController extends Controller
     }
 
 public function search(Request $req){
-    
-   $productos = Producto::where('prdNombre','LIKE', '%'.$req['search'].'%', 
+
+   $productos = Producto::where('prdNombre','LIKE', '%'.$req['search'].'%',
    'or','marca', 'LIKE', '%'.$req['search'].'%')->get();
    return view('/Productos/Marca',[
     'productos'=>$productos,

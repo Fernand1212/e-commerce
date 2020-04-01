@@ -2,7 +2,11 @@
 
 body {
 	flex: content;
-	background-color: white;
+   
+
+}
+a{
+    padding-bottom: ;
 }
 #aa:hover {
 	color: purple;
@@ -40,7 +44,7 @@ color: #0e76a8;
 	font-size: 17px;
 	padding: 0%;
 	padding-bottom: 1%;
-	
+
 	text-decoration: none;
 }
 #nuevo:hover{
@@ -60,12 +64,12 @@ color: rgb(0, 0, 0);
 	padding-left: 2%;
 }
 #sesion:hover{
-	
+
 	color: black;
 }
 
 #navbarDropdown:hover{
-	
+
 	background-color: #fff;
 }
 /* Barra navegaciòn */
@@ -145,7 +149,8 @@ nav.navbar {
 /* Footer */
 
 .page-footer {
-	background-color: rgba(182, 153, 175, 0.815);
+    background-color: rgba(182, 153, 175, 0.815);
+
 }
 
 #seguinos {

@@ -33,7 +33,9 @@
           {{-- <p class="card-text" >{{$Productos->prdPresentacion}}</p> --}}
           <br>
           <p id="parra">${{$producto->prdPrecio}}</p>
-    </a>
+                    </a>
+          <a style="float: right" href="/Producto/{{$producto->idProducto}}">Ver mas...</a>
+
     </div>
         </div>
       </div>

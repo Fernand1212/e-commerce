@@ -23,14 +23,18 @@
 <div class="col-6 col-lg-4 col-xl-3 mb-5">
 
 <a href="/Producto/{{$Productos->idProducto}}">
-    <div  class="card" id="tar">
-<img src="/storage/{{$Productos->prdImagen}}" class="card-img-top" alt="Imagen Zapatillas">
+    <div class="">
+<img src="/storage/{{$Productos->prdImagen}}"alt="Imagen Zapatillas">
     <div class="card-body" id="tarbody">
 
-      <h5 class="card-title">{{$Productos->prdNombre}}</h5>
+      <h5 class="card-title">{{$Productos->prdNombre}}</h5></a>
       {{-- <p class="card-text" >{{$Productos->prdPresentacion}}</p> --}}
        <p id="parra">${{$Productos->prdPrecio}}</p>
-{{-- </a>
+        <a href="">juytrfed</a>
+
+
+
+{{--
 
 </div>
     </div>

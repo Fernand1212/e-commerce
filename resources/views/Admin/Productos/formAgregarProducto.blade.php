@@ -58,7 +58,12 @@
             </div>
 
             Imagen: <br>
-            <input type="file" name="prdImagen" class="form-control">
+
+
+                <div class="fallback">
+                  <input name="prdImagen" type="file" class="form-control" multiple />
+
+            </div>
             {!! $errors->first('prdImagen',':message')!!}
             <br>
             <button type="submit" class="btn btn-dark px-4">
@@ -83,5 +88,7 @@
 
         </form>
         </div>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">
+        <script src="./path/to/dropzone.js"></script>
     @endsection
