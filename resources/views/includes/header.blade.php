@@ -26,9 +26,10 @@ $categorias = session('categorias');
 
          </ul>
          <form class="form-inline my-2 my-lg-0" action="/Productos" method="GET" style="Margin-right:5%">
-      <input class="form-control mr-sm-2" type="text" id="search"  id="buscador" name="search" placeholder="¿Que buscas?">
+      <input class="form-control mr-sm-2" type="text"   id=" " name="search" placeholder="¿Que buscas?">
 
       <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" >Buscar</button>
+      
     </form>
        <div style="padding=5%">
         <div class="widgets-wrap float-md-left ">
@@ -43,7 +44,7 @@ $categorias = session('categorias');
             <div class="navbar-nav ml-auto">
               <a class=" mr-2" id="sesion" href="{{route('login')}}" role="button">Iniciar Sesión</a>
               @if (Route::has('register'))
-              |<a class="  mr-2" style="padding-left: 2%;" id="sesion" href="{{route('register')}}" role="button">Registrarme</a>
+              <a class="  mr-2" style="padding-left: 2%" id="sesion" href="{{route('register')}}" role="button">Registrarme</a>
             </div>
           </div> @endif
            @else
@@ -66,6 +67,7 @@ $categorias = session('categorias');
   <a class="dropdown-item" href="{{route('productos')}}">
   {{ ('Panel Administrador') }} </a>
   @endif
+
 <a class="dropdown-item" href="" onclick="event.preventDefault();
  document.getElementById('logout-form').submit();">
   {{ __('Salir') }}
@@ -78,3 +80,4 @@ $categorias = session('categorias');
              @endguest
    </nav>
  </div>
+ <script src="js/buscador.js"></script>

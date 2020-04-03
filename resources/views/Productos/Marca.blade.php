@@ -4,12 +4,17 @@
 @section('link')
 <link rel="stylesheet" href="{{asset ('css/pag-productos.css')}}  ">@endsection
 
+<form class="form-inline my-2 my-lg-0" action="/Productos" method="GET" style="Margin-right:5%">
+      <input class="form-control mr-sm-2" type="text"  id="search" name="search" placeholder="¿Que buscas?">
+
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" >Buscar</button>
+      
+    </form>
 
 
 
 
-
-<p class="text-center">
+<p class="text-center" id="buscado" >
       @if (isset($marca)) <img id="portada"  src="/storage/{{$marca->mkImagen}}" alt="" style="max-width:20em; max-height: 20em; ">
     @endif
     </p>
@@ -17,12 +22,12 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row" id="marco">
+  <div class="container" id="esto">
+    <div class="row" id="marco" id="buscado">
 
         @foreach( $productos as $producto)
 
-    <div style=""
+    <div 
     class="col-6 col-lg-4 col-xl-3 mb-5">
     <a href="/Producto/{{$producto->idProducto}}">
         <div  class="card" id="tar">
@@ -47,38 +52,10 @@
 
 </div>
 </div>
-<br>
 
-
-
-
-{{--
-  <section id="zapatillas">
-
-
-  @foreach( $productos as $producto)
-
-    <div id="hola" class="card" style="width: 18rem;">
-      <a href="perfilproducto.html"> {{$producto->prdNombre}}<img id="hola2" src="/storage/{{$producto->prdImagen}}" class="card-img-top" alt="..."></a>
-      <div class="card-body">
-        <div id="nomb">
-          <h2>
-          {{$producto->prdPresentacion}}
-          </h2>
-        </div>
-         <div id="uno">
-          <p style="background-color: rgba(3, 3, 3, 0.425)"  class="card-text">${{$producto->prdPrecio}}</p>
-          <div class="iconitos">
-          <a href=""> <i class="fa fa-shopping-cart"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-   @endforeach
-
-    </section> --}}
 
 </div>
 </div>
-<script src="js/buscador.js" charset="utf-8"></script>
 @endsection
+
+<script src="js/buscador.js"></script>
