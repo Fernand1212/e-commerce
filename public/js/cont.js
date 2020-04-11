@@ -1,6 +1,6 @@
-var nombre = document.getElementById('Nombre');
-var mail =  document.getElementById('mail');
-var error = document.getElementById('error');
+var nombre = document.getElementById('Nombre'),
+mail =  document.getElementById('mail'),
+error = document.getElementById('error');
 error.style.color = 'red';
 
 

@@ -26,7 +26,7 @@ $categorias = session('categorias');
 
          </ul>
          <form class="form-inline my-2 my-lg-0" action="/Productos" method="GET" style="Margin-right:5%">
-      <input class="form-control mr-sm-2" type="text"   id=" " name="search" placeholder="¿Que buscas?">
+      <input class="form-control mr-sm-2" type="text"   id="search" name="search" placeholder="¿Que buscas?">
 
       <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" >Buscar</button>
       
@@ -80,4 +80,4 @@ $categorias = session('categorias');
              @endguest
    </nav>
  </div>
- <script src="js/buscador.js"></script>
+ 

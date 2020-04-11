@@ -28,4 +28,8 @@ public function Contacto() {
   return view('/Contacto');
 }
 
+public function faq(){
+  return view('/faq');
+}
+
 }

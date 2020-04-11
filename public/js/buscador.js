@@ -1,25 +1,21 @@
-window.addEventListener('load',function(){
-  
-var resultadoId = document.getElementById("buscado");
-var buscadorId = document.getElementById("search");
-console.log(buscadorId)
-        buscadorId.addEventListener("keyup", () => {
-            if((buscadorId.value.length)>=1) { 
-                fetch(`/Productos?search=${buscadorId.value}`,{ method:'get' })
-                .then(function(respuesta){
-                    return respuesta.text();
-                  })
+console.log("hola")
+
+window.addEventListener('keyup',() =>{
+
+
+var resultado = document.getElementById("buscado");
+var search = document.getElementById("search");
+        search.addEventListener('keyup', () => {
             
-    .then(function(html){
+                console.log(resultado)
+               fetch(`/Productos?search=${search.value}`)
+                .then(respuesta =>  respuesta.text())
+                .then(html =>  {resultado.innerHTML =  html} )
+                .catch((error) => {
+                    console.log('Hubo un problema con la petición Fetch:' + error.message) })
+            })})
         
-        document.body.innerHTML = resultadoId.innerHTML + html
-      
-        }) }
-            else
-                resultadoId.innerHTML = ""
-        })
-    });
-
+  
 
 
       
@@ -27,4 +23,3 @@ console.log(buscadorId)
 
 
 
-    
