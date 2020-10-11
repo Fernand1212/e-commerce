@@ -17,7 +17,7 @@ INSERT INTO `marcas` (`idMarca`, `mkNombre`, `Eslogan`, `mkImagen`, `created_at`
 
 --
 
-INSERT INTO `productos` (`idProducto`, `prdNombre`, `prdPrecio`, `marca_id`, `categoria_id`, `prdPresentacion`, `prdStock`, `prdImagen`, `created_at`, `updated_at`) VALUES
+INSERT INTO `productos` (`idProducto`, `prdNombre`, `prdPrecio`, `marca`, `categorias`, `prdPresentacion`, `prdStock`, `prdImagen`, `created_at`, `updated_at`) VALUES
 (2, 'Nike Air Max 97', 4500, 2, 1, 'qwertuiohasfhmklkytresasfbnmk', 100, '4PQcYwRTUgBVcfV7XmwERDhItBgaSuqV5UaQdQnu.jpeg', '2020-03-09 21:47:41', '2020-04-01 19:41:44'),
 (3, 'Nike Air Max Oketo', 4500, 2, 2, 'olkjhgfdsadrghjkllñlkjh', 50, '2W5eD2bUtwoln08Nlsu3xySZZXM8tJEUYfGXKOcD.jpeg', '2020-03-09 21:50:11', '2020-03-09 21:50:11'),
 (4, 'Adidas New', 3000, 3, 2, 'lkhgfcxszaaxsdfhujilkjmnbvcdxsf', 70, 'LNKHuT7LMmhQQadLjKQqak5BWLCK1S84qL2kKSWs.jpeg', '2020-03-10 01:09:36', '2020-04-01 19:43:51'),
