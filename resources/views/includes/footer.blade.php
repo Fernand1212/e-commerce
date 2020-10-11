@@ -2,7 +2,7 @@
 <!--container.//-->
 <article class="bg-secondary mb-3  container-fluid">
   <div class="card-body text-center">
-    <h4 class="text-white"><a href="#"><img src="{{asset('images/Icono.ico')}}" alt="" height="100px" width="300px"></a> <br>SIEMPRE UN PASO ADELANTE </h4>
+    <h4 class="text-white"><a href="#"><img src="{{asset('Images/foto.jpg')}}" alt="" height="100px" width="300px"></a> <br>SIEMPRE UN PASO ADELANTE </h4>
     <p class="h5 text-white"> Importadores en calidad, expertos en atención.</p> <br>
 
   </div>
@@ -70,12 +70,12 @@
         <!-- Links -->
         <h6 class="text-uppercase font-weight-bold">Productos</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        
+
         <p>
           <a href="" style="text-decoration:none"></a>
         </p>
-       
-       
+
+
 
       </div>
 
