@@ -44,7 +44,7 @@ $categorias = session('categorias');
             <div class="navbar-nav ml-auto">
               <a class=" mr-2" id="sesion" href="{{route('login')}}" role="button">Iniciar Sesión</a>
               @if (Route::has('register'))
-              <a class="  mr-2" style="padding-left: 2%" id="sesion" href="{{route('bienvenidos')}}" role="button">Registrarme</a>
+              <a class="  mr-2" style="padding-left: 2%" id="sesion" href="{{route('register')}}" role="button">Registrarme</a>
             </div>
           </div> @endif
            @else
