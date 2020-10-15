@@ -3,6 +3,7 @@
  * includes React and other helpers. It's a great starting point while
  * building robust, powerful web applications using React + Laravel.
  */
+ import React, { Component } from 'react';
 
 require('./bootstrap');
 
@@ -13,3 +14,9 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+
+class Hello extends Component {
+  render(){
+    return <h1>{this.props.text}</h1>
+  }
+}

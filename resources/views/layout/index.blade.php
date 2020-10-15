@@ -2,10 +2,9 @@
 @section('content')
 <!-- Carousel -->
 @section('title')CASBUSAGI @endsection
-
 <!-- Carousel -->
-<div class="container-fluid bd-example pt-2">
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+
+  <div id="carouselExampleCaptions" class="carousel slide container-fluid" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -16,7 +15,7 @@
       <div class="carousel-item active">
         <img src="{{asset('Images/giphyfluor5.gif')}}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5>CONOCE TUS LIMITES Y LUEGO DESAFIALOS</h5>
+          <Hello text='Hola caracola'/>
           <p id="CON">CONVERSE</p>
         </div>
       </div>
@@ -43,13 +42,13 @@
       </div>
     </div> <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
   </div>
-</div>
+
 
 
 
 <!-- tarjetas -->
 
-<div class="container tarjetas">
+<div class="container-fluid tarjetas">
     <div class="row">
       <div class="col-md-4">
         @foreach ($marcas as $marca)<figure class="card card-product">
