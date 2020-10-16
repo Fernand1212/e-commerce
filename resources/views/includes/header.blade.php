@@ -3,7 +3,7 @@ $marcas = session('marcas');
 $categorias = session('categorias');
 ?>
  <!-- NAV -->
- <div class="collapse-fluid ">
+ <div class="grid">
    <a href="/Contacto" id="aa"> Contactanos</a>
    <nav class="navbar navbar-expand-lg navbar-light" id="inicio">
      <h4 class=" mr-3 text-uppercase font-weight-bold"><a href="/" style="color: black;text-decoration: none;">CASBUSAGI</a> </h4>
@@ -80,4 +80,4 @@ $categorias = session('categorias');
              @endguest
 
  </div>
-</div></div></div></nav></div>
+</div></div></nav></div></div>
