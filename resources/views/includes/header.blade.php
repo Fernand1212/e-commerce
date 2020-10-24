@@ -28,7 +28,7 @@ $categorias = session('categorias');
          <form class="form-inline " action="/Productos" method="GET">
       <input class="form-control mr-sm-2" type="text"   id="search" name="search" placeholder="¿Que buscas?">
 
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" >Buscar</button>
+      <button class="btn btn-outline-danger my-2 my-sm-0"  type="submit" >Buscar</button>
 
     </form>
 

@@ -1,12 +1,5 @@
-@extends('layout.main')
-@section('content')
-@section('title')Productos @endsection
-@section('link')
+
 <link rel="stylesheet" href="{{asset ('css/pag-productos.css')}}  ">@endsection
-
-
-
-
 
 
 <p class="text-center">
@@ -21,10 +14,9 @@
 <div class="container">
   <div class="row" id="marco">
 
+    @foreach( $productos as $producto)
 
-@foreach( $productos as $producto)
-    <div class="col-2 col-lg-4 col-xl-3 mb-2">
-
+    <div class="col-6 col-lg-4 col-xl-3 mb-5">
       <a href="/Producto/{{$producto->idProducto}} ">
         <div class="card" id="tar">
           <img src="/storage/{{$producto->prdImagen}}" class="card-img-top" alt="Imagen Zapatillas">
@@ -40,11 +32,12 @@
     </div>
   </div>
 </div>
-@endforeach
 </div>
 </div>
 </section>
+@endforeach
 
 
-@endsection
-<script src="js/buscador.js"></script>
+<
+</body>
+</html>
