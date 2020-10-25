@@ -2,7 +2,7 @@
 <!--container.//-->
 <article class="bg-secondary mb-3  container-fluid">
   <div class="card-body text-center">
-    <img src="{{asset('Logo.jpg')}}" alt="" height="100px" width="300px">
+    <img src="{{asset('/Images/Logo.ico')}}" alt="" height="100px" width="300px">
     <h4 class="text-white"> SIEMPRE UN PASO ADELANTE </h4>
     <p class="h5 text-white"> Importadores en calidad, expertos en atención.</p> <br>
 
