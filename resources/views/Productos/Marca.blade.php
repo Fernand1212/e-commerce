@@ -17,7 +17,7 @@
 
 
 
-<section id="buscado">
+<section name="resultado">
 <div class="container">
   <div class="row" id="marco">
 
