@@ -19,8 +19,8 @@ class CreateProductosTable extends Migration
             $table->integer('prdPrecio');
             $table->unsignedBigInteger('marca');
             $table->foreign('marca')->references('idMarca')->on('marcas')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('categorias');
-            $table->foreign('categorias')->references('idCategoria')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('categoria');
+            $table->foreign('categoria')->references('idCategoria')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->text('prdPresentacion');
             $table->integer('prdStock');
             $table->text('prdImagen');

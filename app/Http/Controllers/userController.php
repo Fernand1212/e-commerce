@@ -100,7 +100,7 @@ class userController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy()
+    public function destroy(){
 
 
 

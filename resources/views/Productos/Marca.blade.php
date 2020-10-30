@@ -17,7 +17,7 @@
 
 
 
-<section name="resultado">
+<section id="resultado">
 <div class="container">
   <div class="row" id="marco">
 
